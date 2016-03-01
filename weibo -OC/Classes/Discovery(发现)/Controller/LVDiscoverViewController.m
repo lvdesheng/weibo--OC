@@ -17,11 +17,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //创建搜索框对象
+    UITextField *searchBar = [[UITextField alloc]init];
+    searchBar.height = 35;
+    searchBar.width = LVScreenW;
+    searchBar.font = [UIFont systemFontOfSize:15];
+    searchBar.placeholder = @"请搜索";
+    searchBar.placeholderColor = [UIColor grayColor];
+    searchBar.background = [UIImage imageNamed:@"searchbar_textfield_background"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //创建搜索栏左边小放大镜
+    UIImageView *searchIcon = [[UIImageView alloc]init];
+    searchIcon.image = [UIImage imageNamed:@"searchbar_textfield_search_icon"];
+    searchIcon.height = 30;
+    searchIcon.width = 30;
+    searchIcon.contentMode = UIViewContentModeCenter;
+    searchBar.leftViewMode = UITextFieldViewModeAlways;
+    searchBar.leftView = searchIcon;
+    
+    self.navigationItem.titleView = searchBar;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

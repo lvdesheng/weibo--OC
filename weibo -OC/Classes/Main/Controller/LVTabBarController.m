@@ -61,7 +61,7 @@
     selTextAttr[NSForegroundColorAttributeName] = [UIColor orangeColor];
     [childVC.tabBarItem setTitleTextAttributes:selTextAttr forState:UIControlStateSelected];
     
-    childVC.view.backgroundColor = LVRandomColor;
+//    childVC.view.backgroundColor = LVRandomColor;
     
     
     //设置子控制器

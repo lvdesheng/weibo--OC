@@ -28,6 +28,7 @@
     
     // style : 这个参数是用来设置背景的，在iOS7之前效果比较明显, iOS7中没有任何效果
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"写私信" style:UIBarButtonItemStylePlain target:self action:@selector(sendMessage)];
+    LVFunc;
     
 }
 
