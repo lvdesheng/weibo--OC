@@ -14,6 +14,27 @@
 
 @implementation LVVNavgationController
 
++ (void)initialize
+{
+    //设置整个项目的item的主题样式
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    
+    //普通状态
+    
+    NSMutableDictionary *TextAttr = [NSMutableDictionary dictionary];
+    TextAttr[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    TextAttr[NSFontAttributeName] = [UIFont systemFontOfSize:15];
+    [item setTitleTextAttributes:TextAttr forState:UIControlStateNormal];
+    //不可用状态
+    NSMutableDictionary *disableTextAttr = [NSMutableDictionary dictionary];
+    disableTextAttr[NSForegroundColorAttributeName] = LVColor(147, 147, 147);
+    disableTextAttr[NSFontAttributeName] = [UIFont systemFontOfSize:15];
+    [item setTitleTextAttributes:disableTextAttr forState:UIControlStateDisabled];
+    
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

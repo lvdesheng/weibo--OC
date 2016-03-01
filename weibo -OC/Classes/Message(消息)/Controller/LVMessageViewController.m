@@ -14,15 +14,28 @@
 
 @implementation LVMessageViewController
 
+
+
+- (void)viewWillAppear:(BOOL)animated
+{   // 这个item不能点击(目前放在viewWillAppear就能显示disable下的主题)
+    [super viewWillAppear:animated];
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // style : 这个参数是用来设置背景的，在iOS7之前效果比较明显, iOS7中没有任何效果
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"写私信" style:UIBarButtonItemStylePlain target:self action:@selector(sendMessage)];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)sendMessage
+{
+    LVFunc
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -33,7 +46,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return 20;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
