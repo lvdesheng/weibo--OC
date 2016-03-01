@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E76372011C8546970005C143 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372001C8546970005C143 /* main.m */; };
-		E76372041C8546970005C143 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372031C8546970005C143 /* AppDelegate.m */; };
-		E76372071C8546970005C143 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372061C8546970005C143 /* ViewController.m */; };
-		E763720A1C8546970005C143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76372081C8546970005C143 /* Main.storyboard */; };
 		E763720C1C8546970005C143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E763720B1C8546970005C143 /* Assets.xcassets */; };
 		E763720F1C8546970005C143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E763720D1C8546970005C143 /* LaunchScreen.storyboard */; };
 		E763721A1C8546970005C143 /* weibo__OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372191C8546970005C143 /* weibo__OCTests.m */; };
 		E76372251C8546970005C143 /* weibo__OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372241C8546970005C143 /* weibo__OCUITests.m */; };
+		E7FA42D91C8570AE00E6558A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42D01C8570AE00E6558A /* AppDelegate.m */; };
+		E7FA42DA1C8570AE00E6558A /* LVDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42D21C8570AE00E6558A /* LVDiscoverViewController.m */; };
+		E7FA42DB1C8570AE00E6558A /* LVHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42D41C8570AE00E6558A /* LVHomeViewController.m */; };
+		E7FA42DC1C8570AE00E6558A /* LVMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42D61C8570AE00E6558A /* LVMessageViewController.m */; };
+		E7FA42DD1C8570AE00E6558A /* LVMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42D81C8570AE00E6558A /* LVMeViewController.m */; };
+		E7FA42E01C8570D400E6558A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42DF1C8570D400E6558A /* main.m */; };
+		E7FA42EE1C85728700E6558A /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42E31C85728700E6558A /* UIBarButtonItem+item.m */; };
+		E7FA42EF1C85728700E6558A /* UIImage+Antialias.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42E51C85728700E6558A /* UIImage+Antialias.m */; };
+		E7FA42F01C85728700E6558A /* UIImage+XMG.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42E71C85728700E6558A /* UIImage+XMG.m */; };
+		E7FA42F11C85728700E6558A /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42E91C85728700E6558A /* UITextField+Placeholder.m */; };
+		E7FA42F21C85728700E6558A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42EB1C85728700E6558A /* UIView+Frame.m */; };
+		E7FA42F31C85728700E6558A /* UIView+xib.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42ED1C85728700E6558A /* UIView+xib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +44,6 @@
 
 /* Begin PBXFileReference section */
 		E76371FC1C8546970005C143 /* weibo -OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo -OC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E76372001C8546970005C143 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E76372021C8546970005C143 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E76372031C8546970005C143 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E76372051C8546970005C143 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E76372061C8546970005C143 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E76372091C8546970005C143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E763720B1C8546970005C143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E763720E1C8546970005C143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E76372101C8546970005C143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +53,30 @@
 		E76372201C8546970005C143 /* weibo -OCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weibo -OCUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76372241C8546970005C143 /* weibo__OCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weibo__OCUITests.m; sourceTree = "<group>"; };
 		E76372261C8546970005C143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7FA42CF1C8570AE00E6558A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E7FA42D01C8570AE00E6558A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E7FA42D11C8570AE00E6558A /* LVDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVDiscoverViewController.h; sourceTree = "<group>"; };
+		E7FA42D21C8570AE00E6558A /* LVDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDiscoverViewController.m; sourceTree = "<group>"; };
+		E7FA42D31C8570AE00E6558A /* LVHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVHomeViewController.h; sourceTree = "<group>"; };
+		E7FA42D41C8570AE00E6558A /* LVHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVHomeViewController.m; sourceTree = "<group>"; };
+		E7FA42D51C8570AE00E6558A /* LVMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVMessageViewController.h; sourceTree = "<group>"; };
+		E7FA42D61C8570AE00E6558A /* LVMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVMessageViewController.m; sourceTree = "<group>"; };
+		E7FA42D71C8570AE00E6558A /* LVMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVMeViewController.h; sourceTree = "<group>"; };
+		E7FA42D81C8570AE00E6558A /* LVMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVMeViewController.m; sourceTree = "<group>"; };
+		E7FA42DF1C8570D400E6558A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E7FA42E21C85728700E6558A /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
+		E7FA42E31C85728700E6558A /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
+		E7FA42E41C85728700E6558A /* UIImage+Antialias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Antialias.h"; sourceTree = "<group>"; };
+		E7FA42E51C85728700E6558A /* UIImage+Antialias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Antialias.m"; sourceTree = "<group>"; };
+		E7FA42E61C85728700E6558A /* UIImage+XMG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XMG.h"; sourceTree = "<group>"; };
+		E7FA42E71C85728700E6558A /* UIImage+XMG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XMG.m"; sourceTree = "<group>"; };
+		E7FA42E81C85728700E6558A /* UITextField+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
+		E7FA42E91C85728700E6558A /* UITextField+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
+		E7FA42EA1C85728700E6558A /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		E7FA42EB1C85728700E6558A /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		E7FA42EC1C85728700E6558A /* UIView+xib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+xib.h"; sourceTree = "<group>"; };
+		E7FA42ED1C85728700E6558A /* UIView+xib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+xib.m"; sourceTree = "<group>"; };
+		E7FA42F51C8572D900E6558A /* BSBDJ.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSBDJ.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +127,9 @@
 		E76371FE1C8546970005C143 /* weibo -OC */ = {
 			isa = PBXGroup;
 			children = (
-				E76372021C8546970005C143 /* AppDelegate.h */,
-				E76372031C8546970005C143 /* AppDelegate.m */,
-				E76372051C8546970005C143 /* ViewController.h */,
-				E76372061C8546970005C143 /* ViewController.m */,
-				E76372081C8546970005C143 /* Main.storyboard */,
+				E7FA42DE1C8570D400E6558A /* Other */,
+				E7FA42CE1C8570AE00E6558A /* Classes */,
 				E763720B1C8546970005C143 /* Assets.xcassets */,
-				E763720D1C8546970005C143 /* LaunchScreen.storyboard */,
 				E76372101C8546970005C143 /* Info.plist */,
 				E76371FF1C8546970005C143 /* Supporting Files */,
 			);
@@ -117,7 +139,6 @@
 		E76371FF1C8546970005C143 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E76372001C8546970005C143 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +159,53 @@
 				E76372261C8546970005C143 /* Info.plist */,
 			);
 			path = "weibo -OCUITests";
+			sourceTree = "<group>";
+		};
+		E7FA42CE1C8570AE00E6558A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA42CF1C8570AE00E6558A /* AppDelegate.h */,
+				E7FA42D01C8570AE00E6558A /* AppDelegate.m */,
+				E7FA42D11C8570AE00E6558A /* LVDiscoverViewController.h */,
+				E7FA42D21C8570AE00E6558A /* LVDiscoverViewController.m */,
+				E7FA42D31C8570AE00E6558A /* LVHomeViewController.h */,
+				E7FA42D41C8570AE00E6558A /* LVHomeViewController.m */,
+				E7FA42D51C8570AE00E6558A /* LVMessageViewController.h */,
+				E7FA42D61C8570AE00E6558A /* LVMessageViewController.m */,
+				E7FA42D71C8570AE00E6558A /* LVMeViewController.h */,
+				E7FA42D81C8570AE00E6558A /* LVMeViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E7FA42DE1C8570D400E6558A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA42E11C85728700E6558A /* Categoty */,
+				E7FA42DF1C8570D400E6558A /* main.m */,
+				E7FA42F51C8572D900E6558A /* BSBDJ.pch */,
+				E763720D1C8546970005C143 /* LaunchScreen.storyboard */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E7FA42E11C85728700E6558A /* Categoty */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA42E21C85728700E6558A /* UIBarButtonItem+item.h */,
+				E7FA42E31C85728700E6558A /* UIBarButtonItem+item.m */,
+				E7FA42E41C85728700E6558A /* UIImage+Antialias.h */,
+				E7FA42E51C85728700E6558A /* UIImage+Antialias.m */,
+				E7FA42E61C85728700E6558A /* UIImage+XMG.h */,
+				E7FA42E71C85728700E6558A /* UIImage+XMG.m */,
+				E7FA42E81C85728700E6558A /* UITextField+Placeholder.h */,
+				E7FA42E91C85728700E6558A /* UITextField+Placeholder.m */,
+				E7FA42EA1C85728700E6558A /* UIView+Frame.h */,
+				E7FA42EB1C85728700E6558A /* UIView+Frame.m */,
+				E7FA42EC1C85728700E6558A /* UIView+xib.h */,
+				E7FA42ED1C85728700E6558A /* UIView+xib.m */,
+			);
+			path = Categoty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +270,7 @@
 		E76371F41C8546970005C143 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LV;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = lvdesheng;
 				TargetAttributes = {
@@ -248,7 +317,6 @@
 			files = (
 				E763720F1C8546970005C143 /* LaunchScreen.storyboard in Resources */,
 				E763720C1C8546970005C143 /* Assets.xcassets in Resources */,
-				E763720A1C8546970005C143 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +341,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E76372071C8546970005C143 /* ViewController.m in Sources */,
-				E76372041C8546970005C143 /* AppDelegate.m in Sources */,
-				E76372011C8546970005C143 /* main.m in Sources */,
+				E7FA42EF1C85728700E6558A /* UIImage+Antialias.m in Sources */,
+				E7FA42DD1C8570AE00E6558A /* LVMeViewController.m in Sources */,
+				E7FA42F31C85728700E6558A /* UIView+xib.m in Sources */,
+				E7FA42DA1C8570AE00E6558A /* LVDiscoverViewController.m in Sources */,
+				E7FA42F11C85728700E6558A /* UITextField+Placeholder.m in Sources */,
+				E7FA42D91C8570AE00E6558A /* AppDelegate.m in Sources */,
+				E7FA42DB1C8570AE00E6558A /* LVHomeViewController.m in Sources */,
+				E7FA42EE1C85728700E6558A /* UIBarButtonItem+item.m in Sources */,
+				E7FA42F01C85728700E6558A /* UIImage+XMG.m in Sources */,
+				E7FA42E01C8570D400E6558A /* main.m in Sources */,
+				E7FA42DC1C8570AE00E6558A /* LVMessageViewController.m in Sources */,
+				E7FA42F21C85728700E6558A /* UIView+Frame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,20 +388,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E76372081C8546970005C143 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E76372091C8546970005C143 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E763720D1C8546970005C143 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E763720E1C8546970005C143 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -414,6 +484,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "weibo -OC/Other/BSBDJ.pch";
 				INFOPLIST_FILE = "weibo -OC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xiaomage.weibo--OC";
@@ -425,6 +498,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "weibo -OC/Other/BSBDJ.pch";
 				INFOPLIST_FILE = "weibo -OC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xiaomage.weibo--OC";
@@ -499,6 +575,7 @@
 				E763722B1C8546970005C143 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E763722C1C8546970005C143 /* Build configuration list for PBXNativeTarget "weibo -OCTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +584,7 @@
 				E763722E1C8546970005C143 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E763722F1C8546970005C143 /* Build configuration list for PBXNativeTarget "weibo -OCUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +593,7 @@
 				E76372311C8546970005C143 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

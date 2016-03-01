@@ -1,0 +1,63 @@
+//
+//  BSBDJ.pch
+//  BSBDJ
+//
+//  Created by lvdesheng on 16/2/19.
+//  Copyright © 2016年 lvdesheng. All rights reserved.
+//
+
+/*
+ 
+ 1.存放公用宏
+ 2.存放公用头文件
+ 3.自定义Log
+ 
+ 使用pch,提前编译
+ 
+ */
+
+#define LVColor(r, g, b) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:1]
+
+#define LVRandomColor LVColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
+
+#define LVAFNWriteToPlist(filename) [responseObject writeToFile:[NSString stringWithFormat:@"/Users/lvdesheng/Desktop/%@.plist", @#filename] atomically:YES];
+
+#import "UIView+Frame.h"
+#import "UIImage+XMG.h"
+#import "UIBarButtonItem+item.h"
+#import "UIView+xib.h"
+#import "UITextField+Placeholder.h"
+
+
+#define LVFunc LVLog(@"%s",__func__);
+
+#ifndef BSBDJ_pch
+#define BSBDJ_pch
+
+/**
+ *  自定义LOG
+ *
+ */
+#ifdef DEBUG // 调试
+
+#define LVLog(...) NSLog(__VA_ARGS__)
+
+#else // 发布
+
+#define LVLog(...)
+
+#endif
+
+#endif /* BSBDJ_pch */
+
+/*****屏幕适配****************/
+
+#define LVScreenW [UIScreen mainScreen].bounds.size.width
+#define LVScreenH [UIScreen mainScreen].bounds.size.height
+
+#define iPhone6P ([UIScreen mainScreen].bounds.size.height == 736)
+#define iPhone6  ([UIScreen mainScreen].bounds.size.height == 667)
+#define iPhone5  ([UIScreen mainScreen].bounds.size.height == 568)
+#define iPhone4  ([UIScreen mainScreen].bounds.size.height == 480)
+
+/*****屏幕适配****************/

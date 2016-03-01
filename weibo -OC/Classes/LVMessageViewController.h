@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LVMessageViewController.h
 //  weibo -OC
 //
 //  Created by lvdesheng on 16/3/1.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface LVMessageViewController : UITableViewController
 
 @end
-
