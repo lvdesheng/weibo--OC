@@ -11,6 +11,8 @@
 #import "LVDiscoverViewController.h"
 #import "LVMeViewController.h"
 #import "LVMessageViewController.h"
+#import "LVVNavgationController.h"
+
 
 
 @interface LVTabBarController ()
@@ -63,7 +65,7 @@
     
     
     //设置子控制器
-    UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:childVC];
+    LVVNavgationController *navVC = [[LVVNavgationController alloc]initWithRootViewController:childVC];
     
     [self addChildViewController:navVC];
 }

@@ -24,6 +24,9 @@
 		E7FA42F21C85728700E6558A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42EB1C85728700E6558A /* UIView+Frame.m */; };
 		E7FA42F31C85728700E6558A /* UIView+xib.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42ED1C85728700E6558A /* UIView+xib.m */; };
 		E7FA42F81C85866700E6558A /* LVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42F71C85866700E6558A /* LVTabBarController.m */; };
+		E7FA42FB1C8589EC00E6558A /* LVVNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42FA1C8589EC00E6558A /* LVVNavgationController.m */; };
+		E7FA42FF1C858B2400E6558A /* LVtest1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42FD1C858B2400E6558A /* LVtest1ViewController.m */; };
+		E7FA43001C858B2400E6558A /* LVtest1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FA42FE1C858B2400E6558A /* LVtest1ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,11 @@
 		E7FA42F51C8572D900E6558A /* BSBDJ.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSBDJ.pch; sourceTree = "<group>"; };
 		E7FA42F61C85866700E6558A /* LVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVTabBarController.h; sourceTree = "<group>"; };
 		E7FA42F71C85866700E6558A /* LVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVTabBarController.m; sourceTree = "<group>"; };
+		E7FA42F91C8589EC00E6558A /* LVVNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVVNavgationController.h; sourceTree = "<group>"; };
+		E7FA42FA1C8589EC00E6558A /* LVVNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVVNavgationController.m; sourceTree = "<group>"; };
+		E7FA42FC1C858B2400E6558A /* LVtest1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVtest1ViewController.h; sourceTree = "<group>"; };
+		E7FA42FD1C858B2400E6558A /* LVtest1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVtest1ViewController.m; sourceTree = "<group>"; };
+		E7FA42FE1C858B2400E6558A /* LVtest1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LVtest1ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,11 @@
 				E7FA42D81C8570AE00E6558A /* LVMeViewController.m */,
 				E7FA42F61C85866700E6558A /* LVTabBarController.h */,
 				E7FA42F71C85866700E6558A /* LVTabBarController.m */,
+				E7FA42F91C8589EC00E6558A /* LVVNavgationController.h */,
+				E7FA42FA1C8589EC00E6558A /* LVVNavgationController.m */,
+				E7FA42FC1C858B2400E6558A /* LVtest1ViewController.h */,
+				E7FA42FD1C858B2400E6558A /* LVtest1ViewController.m */,
+				E7FA42FE1C858B2400E6558A /* LVtest1ViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -321,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E763720F1C8546970005C143 /* LaunchScreen.storyboard in Resources */,
+				E7FA43001C858B2400E6558A /* LVtest1ViewController.xib in Resources */,
 				E763720C1C8546970005C143 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,9 +368,11 @@
 				E7FA42D91C8570AE00E6558A /* AppDelegate.m in Sources */,
 				E7FA42DB1C8570AE00E6558A /* LVHomeViewController.m in Sources */,
 				E7FA42F81C85866700E6558A /* LVTabBarController.m in Sources */,
+				E7FA42FB1C8589EC00E6558A /* LVVNavgationController.m in Sources */,
 				E7FA42EE1C85728700E6558A /* UIBarButtonItem+item.m in Sources */,
 				E7FA42F01C85728700E6558A /* UIImage+XMG.m in Sources */,
 				E7FA42E01C8570D400E6558A /* main.m in Sources */,
+				E7FA42FF1C858B2400E6558A /* LVtest1ViewController.m in Sources */,
 				E7FA42DC1C8570AE00E6558A /* LVMessageViewController.m in Sources */,
 				E7FA42F21C85728700E6558A /* UIView+Frame.m in Sources */,
 			);
