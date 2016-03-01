@@ -172,11 +172,11 @@
 		E7FA43011C859A2C00E6558A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E7FA43021C859A2C00E6558A /* Discovery(发现) */,
+				E7FA431F1C859A2C00E6558A /* Message(消息) */,
 				E7FA43081C859A2C00E6558A /* Home(首页) */,
+				E7FA43021C859A2C00E6558A /* Discovery(发现) */,
 				E7FA430E1C859A2C00E6558A /* Main */,
 				E7FA43191C859A2C00E6558A /* Me(我) */,
-				E7FA431F1C859A2C00E6558A /* Message(消息) */,
 				E7FA43251C859A2C00E6558A /* Other */,
 				E7FA43351C859A2C00E6558A /* 临时 */,
 			);
@@ -363,8 +363,8 @@
 		E7FA43251C859A2C00E6558A /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				E7FA43261C859A2C00E6558A /* BSBDJ.pch */,
 				E7FA43271C859A2C00E6558A /* Categoty */,
+				E7FA43261C859A2C00E6558A /* BSBDJ.pch */,
 				E7FA43341C859A2C00E6558A /* main.m */,
 			);
 			path = Other;
