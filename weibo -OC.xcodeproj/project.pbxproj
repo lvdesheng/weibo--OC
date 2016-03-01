@@ -8,25 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		E763720C1C8546970005C143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E763720B1C8546970005C143 /* Assets.xcassets */; };
-		E763720F1C8546970005C143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E763720D1C8546970005C143 /* LaunchScreen.storyboard */; };
 		E763721A1C8546970005C143 /* weibo__OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372191C8546970005C143 /* weibo__OCTests.m */; };
 		E76372251C8546970005C143 /* weibo__OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372241C8546970005C143 /* weibo__OCUITests.m */; };
-		E7FA42D91C8570AE00E6558A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42D01C8570AE00E6558A /* AppDelegate.m */; };
-		E7FA42DA1C8570AE00E6558A /* LVDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42D21C8570AE00E6558A /* LVDiscoverViewController.m */; };
-		E7FA42DB1C8570AE00E6558A /* LVHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42D41C8570AE00E6558A /* LVHomeViewController.m */; };
-		E7FA42DC1C8570AE00E6558A /* LVMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42D61C8570AE00E6558A /* LVMessageViewController.m */; };
-		E7FA42DD1C8570AE00E6558A /* LVMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42D81C8570AE00E6558A /* LVMeViewController.m */; };
-		E7FA42E01C8570D400E6558A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42DF1C8570D400E6558A /* main.m */; };
-		E7FA42EE1C85728700E6558A /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42E31C85728700E6558A /* UIBarButtonItem+item.m */; };
-		E7FA42EF1C85728700E6558A /* UIImage+Antialias.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42E51C85728700E6558A /* UIImage+Antialias.m */; };
-		E7FA42F01C85728700E6558A /* UIImage+XMG.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42E71C85728700E6558A /* UIImage+XMG.m */; };
-		E7FA42F11C85728700E6558A /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42E91C85728700E6558A /* UITextField+Placeholder.m */; };
-		E7FA42F21C85728700E6558A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42EB1C85728700E6558A /* UIView+Frame.m */; };
-		E7FA42F31C85728700E6558A /* UIView+xib.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42ED1C85728700E6558A /* UIView+xib.m */; };
-		E7FA42F81C85866700E6558A /* LVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42F71C85866700E6558A /* LVTabBarController.m */; };
-		E7FA42FB1C8589EC00E6558A /* LVVNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42FA1C8589EC00E6558A /* LVVNavgationController.m */; };
-		E7FA42FF1C858B2400E6558A /* LVtest1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42FD1C858B2400E6558A /* LVtest1ViewController.m */; };
-		E7FA43001C858B2400E6558A /* LVtest1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FA42FE1C858B2400E6558A /* LVtest1ViewController.xib */; };
+		E7FA43391C859A2C00E6558A /* LVDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA43051C859A2C00E6558A /* LVDiscoverViewController.m */; };
+		E7FA433A1C859A2C00E6558A /* LVHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA430B1C859A2C00E6558A /* LVHomeViewController.m */; };
+		E7FA433B1C859A2C00E6558A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA43101C859A2C00E6558A /* AppDelegate.m */; };
+		E7FA433C1C859A2C00E6558A /* LVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA43131C859A2C00E6558A /* LVTabBarController.m */; };
+		E7FA433D1C859A2C00E6558A /* LVVNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA43151C859A2C00E6558A /* LVVNavgationController.m */; };
+		E7FA433E1C859A2C00E6558A /* LVMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA431C1C859A2C00E6558A /* LVMeViewController.m */; };
+		E7FA433F1C859A2C00E6558A /* LVMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA43221C859A2C00E6558A /* LVMessageViewController.m */; };
+		E7FA43401C859A2C00E6558A /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA43291C859A2C00E6558A /* UIBarButtonItem+item.m */; };
+		E7FA43411C859A2C00E6558A /* UIImage+Antialias.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA432B1C859A2C00E6558A /* UIImage+Antialias.m */; };
+		E7FA43421C859A2C00E6558A /* UIImage+XMG.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA432D1C859A2C00E6558A /* UIImage+XMG.m */; };
+		E7FA43431C859A2C00E6558A /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA432F1C859A2C00E6558A /* UITextField+Placeholder.m */; };
+		E7FA43441C859A2C00E6558A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA43311C859A2C00E6558A /* UIView+Frame.m */; };
+		E7FA43451C859A2C00E6558A /* UIView+xib.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA43331C859A2C00E6558A /* UIView+xib.m */; };
+		E7FA43461C859A2C00E6558A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA43341C859A2C00E6558A /* main.m */; };
+		E7FA43471C859A2C00E6558A /* LVtest1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA43371C859A2C00E6558A /* LVtest1ViewController.m */; };
+		E7FA43481C859A2C00E6558A /* LVtest1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FA43381C859A2C00E6558A /* LVtest1ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +48,6 @@
 /* Begin PBXFileReference section */
 		E76371FC1C8546970005C143 /* weibo -OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo -OC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E763720B1C8546970005C143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E763720E1C8546970005C143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E76372101C8546970005C143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E76372151C8546970005C143 /* weibo -OCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weibo -OCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76372191C8546970005C143 /* weibo__OCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weibo__OCTests.m; sourceTree = "<group>"; };
@@ -57,37 +55,37 @@
 		E76372201C8546970005C143 /* weibo -OCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weibo -OCUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76372241C8546970005C143 /* weibo__OCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weibo__OCUITests.m; sourceTree = "<group>"; };
 		E76372261C8546970005C143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7FA42CF1C8570AE00E6558A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E7FA42D01C8570AE00E6558A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E7FA42D11C8570AE00E6558A /* LVDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVDiscoverViewController.h; sourceTree = "<group>"; };
-		E7FA42D21C8570AE00E6558A /* LVDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDiscoverViewController.m; sourceTree = "<group>"; };
-		E7FA42D31C8570AE00E6558A /* LVHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVHomeViewController.h; sourceTree = "<group>"; };
-		E7FA42D41C8570AE00E6558A /* LVHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVHomeViewController.m; sourceTree = "<group>"; };
-		E7FA42D51C8570AE00E6558A /* LVMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVMessageViewController.h; sourceTree = "<group>"; };
-		E7FA42D61C8570AE00E6558A /* LVMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVMessageViewController.m; sourceTree = "<group>"; };
-		E7FA42D71C8570AE00E6558A /* LVMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVMeViewController.h; sourceTree = "<group>"; };
-		E7FA42D81C8570AE00E6558A /* LVMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVMeViewController.m; sourceTree = "<group>"; };
-		E7FA42DF1C8570D400E6558A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E7FA42E21C85728700E6558A /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
-		E7FA42E31C85728700E6558A /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
-		E7FA42E41C85728700E6558A /* UIImage+Antialias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Antialias.h"; sourceTree = "<group>"; };
-		E7FA42E51C85728700E6558A /* UIImage+Antialias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Antialias.m"; sourceTree = "<group>"; };
-		E7FA42E61C85728700E6558A /* UIImage+XMG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XMG.h"; sourceTree = "<group>"; };
-		E7FA42E71C85728700E6558A /* UIImage+XMG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XMG.m"; sourceTree = "<group>"; };
-		E7FA42E81C85728700E6558A /* UITextField+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
-		E7FA42E91C85728700E6558A /* UITextField+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
-		E7FA42EA1C85728700E6558A /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		E7FA42EB1C85728700E6558A /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		E7FA42EC1C85728700E6558A /* UIView+xib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+xib.h"; sourceTree = "<group>"; };
-		E7FA42ED1C85728700E6558A /* UIView+xib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+xib.m"; sourceTree = "<group>"; };
-		E7FA42F51C8572D900E6558A /* BSBDJ.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSBDJ.pch; sourceTree = "<group>"; };
-		E7FA42F61C85866700E6558A /* LVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVTabBarController.h; sourceTree = "<group>"; };
-		E7FA42F71C85866700E6558A /* LVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVTabBarController.m; sourceTree = "<group>"; };
-		E7FA42F91C8589EC00E6558A /* LVVNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVVNavgationController.h; sourceTree = "<group>"; };
-		E7FA42FA1C8589EC00E6558A /* LVVNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVVNavgationController.m; sourceTree = "<group>"; };
-		E7FA42FC1C858B2400E6558A /* LVtest1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVtest1ViewController.h; sourceTree = "<group>"; };
-		E7FA42FD1C858B2400E6558A /* LVtest1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVtest1ViewController.m; sourceTree = "<group>"; };
-		E7FA42FE1C858B2400E6558A /* LVtest1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LVtest1ViewController.xib; sourceTree = "<group>"; };
+		E7FA43041C859A2C00E6558A /* LVDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVDiscoverViewController.h; sourceTree = "<group>"; };
+		E7FA43051C859A2C00E6558A /* LVDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDiscoverViewController.m; sourceTree = "<group>"; };
+		E7FA430A1C859A2C00E6558A /* LVHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVHomeViewController.h; sourceTree = "<group>"; };
+		E7FA430B1C859A2C00E6558A /* LVHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVHomeViewController.m; sourceTree = "<group>"; };
+		E7FA430F1C859A2C00E6558A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E7FA43101C859A2C00E6558A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E7FA43121C859A2C00E6558A /* LVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVTabBarController.h; sourceTree = "<group>"; };
+		E7FA43131C859A2C00E6558A /* LVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVTabBarController.m; sourceTree = "<group>"; };
+		E7FA43141C859A2C00E6558A /* LVVNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVVNavgationController.h; sourceTree = "<group>"; };
+		E7FA43151C859A2C00E6558A /* LVVNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVVNavgationController.m; sourceTree = "<group>"; };
+		E7FA431B1C859A2C00E6558A /* LVMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVMeViewController.h; sourceTree = "<group>"; };
+		E7FA431C1C859A2C00E6558A /* LVMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVMeViewController.m; sourceTree = "<group>"; };
+		E7FA43211C859A2C00E6558A /* LVMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVMessageViewController.h; sourceTree = "<group>"; };
+		E7FA43221C859A2C00E6558A /* LVMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVMessageViewController.m; sourceTree = "<group>"; };
+		E7FA43261C859A2C00E6558A /* BSBDJ.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBDJ.pch; sourceTree = "<group>"; };
+		E7FA43281C859A2C00E6558A /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
+		E7FA43291C859A2C00E6558A /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
+		E7FA432A1C859A2C00E6558A /* UIImage+Antialias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Antialias.h"; sourceTree = "<group>"; };
+		E7FA432B1C859A2C00E6558A /* UIImage+Antialias.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Antialias.m"; sourceTree = "<group>"; };
+		E7FA432C1C859A2C00E6558A /* UIImage+XMG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XMG.h"; sourceTree = "<group>"; };
+		E7FA432D1C859A2C00E6558A /* UIImage+XMG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XMG.m"; sourceTree = "<group>"; };
+		E7FA432E1C859A2C00E6558A /* UITextField+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Placeholder.h"; sourceTree = "<group>"; };
+		E7FA432F1C859A2C00E6558A /* UITextField+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Placeholder.m"; sourceTree = "<group>"; };
+		E7FA43301C859A2C00E6558A /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		E7FA43311C859A2C00E6558A /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		E7FA43321C859A2C00E6558A /* UIView+xib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+xib.h"; sourceTree = "<group>"; };
+		E7FA43331C859A2C00E6558A /* UIView+xib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+xib.m"; sourceTree = "<group>"; };
+		E7FA43341C859A2C00E6558A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E7FA43361C859A2C00E6558A /* LVtest1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVtest1ViewController.h; sourceTree = "<group>"; };
+		E7FA43371C859A2C00E6558A /* LVtest1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVtest1ViewController.m; sourceTree = "<group>"; };
+		E7FA43381C859A2C00E6558A /* LVtest1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LVtest1ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +136,7 @@
 		E76371FE1C8546970005C143 /* weibo -OC */ = {
 			isa = PBXGroup;
 			children = (
-				E7FA42DE1C8570D400E6558A /* Other */,
-				E7FA42CE1C8570AE00E6558A /* Classes */,
+				E7FA43011C859A2C00E6558A /* Classes */,
 				E763720B1C8546970005C143 /* Assets.xcassets */,
 				E76372101C8546970005C143 /* Info.plist */,
 				E76371FF1C8546970005C143 /* Supporting Files */,
@@ -172,58 +169,234 @@
 			path = "weibo -OCUITests";
 			sourceTree = "<group>";
 		};
-		E7FA42CE1C8570AE00E6558A /* Classes */ = {
+		E7FA43011C859A2C00E6558A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E7FA42CF1C8570AE00E6558A /* AppDelegate.h */,
-				E7FA42D01C8570AE00E6558A /* AppDelegate.m */,
-				E7FA42D11C8570AE00E6558A /* LVDiscoverViewController.h */,
-				E7FA42D21C8570AE00E6558A /* LVDiscoverViewController.m */,
-				E7FA42D31C8570AE00E6558A /* LVHomeViewController.h */,
-				E7FA42D41C8570AE00E6558A /* LVHomeViewController.m */,
-				E7FA42D51C8570AE00E6558A /* LVMessageViewController.h */,
-				E7FA42D61C8570AE00E6558A /* LVMessageViewController.m */,
-				E7FA42D71C8570AE00E6558A /* LVMeViewController.h */,
-				E7FA42D81C8570AE00E6558A /* LVMeViewController.m */,
-				E7FA42F61C85866700E6558A /* LVTabBarController.h */,
-				E7FA42F71C85866700E6558A /* LVTabBarController.m */,
-				E7FA42F91C8589EC00E6558A /* LVVNavgationController.h */,
-				E7FA42FA1C8589EC00E6558A /* LVVNavgationController.m */,
-				E7FA42FC1C858B2400E6558A /* LVtest1ViewController.h */,
-				E7FA42FD1C858B2400E6558A /* LVtest1ViewController.m */,
-				E7FA42FE1C858B2400E6558A /* LVtest1ViewController.xib */,
+				E7FA43021C859A2C00E6558A /* Discovery(发现) */,
+				E7FA43081C859A2C00E6558A /* Home(首页) */,
+				E7FA430E1C859A2C00E6558A /* Main */,
+				E7FA43191C859A2C00E6558A /* Me(我) */,
+				E7FA431F1C859A2C00E6558A /* Message(消息) */,
+				E7FA43251C859A2C00E6558A /* Other */,
+				E7FA43351C859A2C00E6558A /* 临时 */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		E7FA42DE1C8570D400E6558A /* Other */ = {
+		E7FA43021C859A2C00E6558A /* Discovery(发现) */ = {
 			isa = PBXGroup;
 			children = (
-				E7FA42E11C85728700E6558A /* Categoty */,
-				E7FA42DF1C8570D400E6558A /* main.m */,
-				E7FA42F51C8572D900E6558A /* BSBDJ.pch */,
-				E763720D1C8546970005C143 /* LaunchScreen.storyboard */,
+				E7FA43031C859A2C00E6558A /* Controller */,
+				E7FA43061C859A2C00E6558A /* Model */,
+				E7FA43071C859A2C00E6558A /* View */,
+			);
+			path = "Discovery(发现)";
+			sourceTree = "<group>";
+		};
+		E7FA43031C859A2C00E6558A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA43041C859A2C00E6558A /* LVDiscoverViewController.h */,
+				E7FA43051C859A2C00E6558A /* LVDiscoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7FA43061C859A2C00E6558A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7FA43071C859A2C00E6558A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7FA43081C859A2C00E6558A /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA43091C859A2C00E6558A /* Controller */,
+				E7FA430C1C859A2C00E6558A /* Model */,
+				E7FA430D1C859A2C00E6558A /* View */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		E7FA43091C859A2C00E6558A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA430A1C859A2C00E6558A /* LVHomeViewController.h */,
+				E7FA430B1C859A2C00E6558A /* LVHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7FA430C1C859A2C00E6558A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7FA430D1C859A2C00E6558A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7FA430E1C859A2C00E6558A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA430F1C859A2C00E6558A /* AppDelegate.h */,
+				E7FA43101C859A2C00E6558A /* AppDelegate.m */,
+				E7FA43111C859A2C00E6558A /* Controller */,
+				E7FA43161C859A2C00E6558A /* Lib */,
+				E7FA43171C859A2C00E6558A /* Model */,
+				E7FA43181C859A2C00E6558A /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E7FA43111C859A2C00E6558A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA43121C859A2C00E6558A /* LVTabBarController.h */,
+				E7FA43131C859A2C00E6558A /* LVTabBarController.m */,
+				E7FA43141C859A2C00E6558A /* LVVNavgationController.h */,
+				E7FA43151C859A2C00E6558A /* LVVNavgationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7FA43161C859A2C00E6558A /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		E7FA43171C859A2C00E6558A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7FA43181C859A2C00E6558A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7FA43191C859A2C00E6558A /* Me(我) */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA431A1C859A2C00E6558A /* Controller */,
+				E7FA431D1C859A2C00E6558A /* Model */,
+				E7FA431E1C859A2C00E6558A /* View */,
+			);
+			path = "Me(我)";
+			sourceTree = "<group>";
+		};
+		E7FA431A1C859A2C00E6558A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA431B1C859A2C00E6558A /* LVMeViewController.h */,
+				E7FA431C1C859A2C00E6558A /* LVMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7FA431D1C859A2C00E6558A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7FA431E1C859A2C00E6558A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7FA431F1C859A2C00E6558A /* Message(消息) */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA43201C859A2C00E6558A /* Controller */,
+				E7FA43231C859A2C00E6558A /* Model */,
+				E7FA43241C859A2C00E6558A /* View */,
+			);
+			path = "Message(消息)";
+			sourceTree = "<group>";
+		};
+		E7FA43201C859A2C00E6558A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA43211C859A2C00E6558A /* LVMessageViewController.h */,
+				E7FA43221C859A2C00E6558A /* LVMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7FA43231C859A2C00E6558A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7FA43241C859A2C00E6558A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7FA43251C859A2C00E6558A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA43261C859A2C00E6558A /* BSBDJ.pch */,
+				E7FA43271C859A2C00E6558A /* Categoty */,
+				E7FA43341C859A2C00E6558A /* main.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
 		};
-		E7FA42E11C85728700E6558A /* Categoty */ = {
+		E7FA43271C859A2C00E6558A /* Categoty */ = {
 			isa = PBXGroup;
 			children = (
-				E7FA42E21C85728700E6558A /* UIBarButtonItem+item.h */,
-				E7FA42E31C85728700E6558A /* UIBarButtonItem+item.m */,
-				E7FA42E41C85728700E6558A /* UIImage+Antialias.h */,
-				E7FA42E51C85728700E6558A /* UIImage+Antialias.m */,
-				E7FA42E61C85728700E6558A /* UIImage+XMG.h */,
-				E7FA42E71C85728700E6558A /* UIImage+XMG.m */,
-				E7FA42E81C85728700E6558A /* UITextField+Placeholder.h */,
-				E7FA42E91C85728700E6558A /* UITextField+Placeholder.m */,
-				E7FA42EA1C85728700E6558A /* UIView+Frame.h */,
-				E7FA42EB1C85728700E6558A /* UIView+Frame.m */,
-				E7FA42EC1C85728700E6558A /* UIView+xib.h */,
-				E7FA42ED1C85728700E6558A /* UIView+xib.m */,
+				E7FA43281C859A2C00E6558A /* UIBarButtonItem+item.h */,
+				E7FA43291C859A2C00E6558A /* UIBarButtonItem+item.m */,
+				E7FA432A1C859A2C00E6558A /* UIImage+Antialias.h */,
+				E7FA432B1C859A2C00E6558A /* UIImage+Antialias.m */,
+				E7FA432C1C859A2C00E6558A /* UIImage+XMG.h */,
+				E7FA432D1C859A2C00E6558A /* UIImage+XMG.m */,
+				E7FA432E1C859A2C00E6558A /* UITextField+Placeholder.h */,
+				E7FA432F1C859A2C00E6558A /* UITextField+Placeholder.m */,
+				E7FA43301C859A2C00E6558A /* UIView+Frame.h */,
+				E7FA43311C859A2C00E6558A /* UIView+Frame.m */,
+				E7FA43321C859A2C00E6558A /* UIView+xib.h */,
+				E7FA43331C859A2C00E6558A /* UIView+xib.m */,
 			);
 			path = Categoty;
+			sourceTree = "<group>";
+		};
+		E7FA43351C859A2C00E6558A /* 临时 */ = {
+			isa = PBXGroup;
+			children = (
+				E7FA43361C859A2C00E6558A /* LVtest1ViewController.h */,
+				E7FA43371C859A2C00E6558A /* LVtest1ViewController.m */,
+				E7FA43381C859A2C00E6558A /* LVtest1ViewController.xib */,
+			);
+			path = "临时";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,8 +506,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E763720F1C8546970005C143 /* LaunchScreen.storyboard in Resources */,
-				E7FA43001C858B2400E6558A /* LVtest1ViewController.xib in Resources */,
+				E7FA43481C859A2C00E6558A /* LVtest1ViewController.xib in Resources */,
 				E763720C1C8546970005C143 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,21 +532,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7FA42EF1C85728700E6558A /* UIImage+Antialias.m in Sources */,
-				E7FA42DD1C8570AE00E6558A /* LVMeViewController.m in Sources */,
-				E7FA42F31C85728700E6558A /* UIView+xib.m in Sources */,
-				E7FA42DA1C8570AE00E6558A /* LVDiscoverViewController.m in Sources */,
-				E7FA42F11C85728700E6558A /* UITextField+Placeholder.m in Sources */,
-				E7FA42D91C8570AE00E6558A /* AppDelegate.m in Sources */,
-				E7FA42DB1C8570AE00E6558A /* LVHomeViewController.m in Sources */,
-				E7FA42F81C85866700E6558A /* LVTabBarController.m in Sources */,
-				E7FA42FB1C8589EC00E6558A /* LVVNavgationController.m in Sources */,
-				E7FA42EE1C85728700E6558A /* UIBarButtonItem+item.m in Sources */,
-				E7FA42F01C85728700E6558A /* UIImage+XMG.m in Sources */,
-				E7FA42E01C8570D400E6558A /* main.m in Sources */,
-				E7FA42FF1C858B2400E6558A /* LVtest1ViewController.m in Sources */,
-				E7FA42DC1C8570AE00E6558A /* LVMessageViewController.m in Sources */,
-				E7FA42F21C85728700E6558A /* UIView+Frame.m in Sources */,
+				E7FA43441C859A2C00E6558A /* UIView+Frame.m in Sources */,
+				E7FA43431C859A2C00E6558A /* UITextField+Placeholder.m in Sources */,
+				E7FA433E1C859A2C00E6558A /* LVMeViewController.m in Sources */,
+				E7FA43401C859A2C00E6558A /* UIBarButtonItem+item.m in Sources */,
+				E7FA43451C859A2C00E6558A /* UIView+xib.m in Sources */,
+				E7FA43421C859A2C00E6558A /* UIImage+XMG.m in Sources */,
+				E7FA433F1C859A2C00E6558A /* LVMessageViewController.m in Sources */,
+				E7FA43391C859A2C00E6558A /* LVDiscoverViewController.m in Sources */,
+				E7FA43411C859A2C00E6558A /* UIImage+Antialias.m in Sources */,
+				E7FA433C1C859A2C00E6558A /* LVTabBarController.m in Sources */,
+				E7FA433D1C859A2C00E6558A /* LVVNavgationController.m in Sources */,
+				E7FA433A1C859A2C00E6558A /* LVHomeViewController.m in Sources */,
+				E7FA43471C859A2C00E6558A /* LVtest1ViewController.m in Sources */,
+				E7FA43461C859A2C00E6558A /* main.m in Sources */,
+				E7FA433B1C859A2C00E6558A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,18 +580,6 @@
 			targetProxy = E76372211C8546970005C143 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		E763720D1C8546970005C143 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E763720E1C8546970005C143 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E76372271C8546970005C143 /* Debug */ = {
@@ -508,7 +668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "weibo -OC/Other/BSBDJ.pch";
+				GCC_PREFIX_HEADER = "weibo -OC/Classes/Other/BSBDJ.pch";
 				INFOPLIST_FILE = "weibo -OC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xiaomage.weibo--OC";
@@ -522,7 +682,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "weibo -OC/Other/BSBDJ.pch";
+				GCC_PREFIX_HEADER = "weibo -OC/Classes/Other/BSBDJ.pch";
 				INFOPLIST_FILE = "weibo -OC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xiaomage.weibo--OC";
