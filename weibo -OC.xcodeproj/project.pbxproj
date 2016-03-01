@@ -23,6 +23,7 @@
 		E7FA42F11C85728700E6558A /* UITextField+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42E91C85728700E6558A /* UITextField+Placeholder.m */; };
 		E7FA42F21C85728700E6558A /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42EB1C85728700E6558A /* UIView+Frame.m */; };
 		E7FA42F31C85728700E6558A /* UIView+xib.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42ED1C85728700E6558A /* UIView+xib.m */; };
+		E7FA42F81C85866700E6558A /* LVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA42F71C85866700E6558A /* LVTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		E7FA42EC1C85728700E6558A /* UIView+xib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+xib.h"; sourceTree = "<group>"; };
 		E7FA42ED1C85728700E6558A /* UIView+xib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+xib.m"; sourceTree = "<group>"; };
 		E7FA42F51C8572D900E6558A /* BSBDJ.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSBDJ.pch; sourceTree = "<group>"; };
+		E7FA42F61C85866700E6558A /* LVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVTabBarController.h; sourceTree = "<group>"; };
+		E7FA42F71C85866700E6558A /* LVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,8 @@
 				E7FA42D61C8570AE00E6558A /* LVMessageViewController.m */,
 				E7FA42D71C8570AE00E6558A /* LVMeViewController.h */,
 				E7FA42D81C8570AE00E6558A /* LVMeViewController.m */,
+				E7FA42F61C85866700E6558A /* LVTabBarController.h */,
+				E7FA42F71C85866700E6558A /* LVTabBarController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				E7FA42F11C85728700E6558A /* UITextField+Placeholder.m in Sources */,
 				E7FA42D91C8570AE00E6558A /* AppDelegate.m in Sources */,
 				E7FA42DB1C8570AE00E6558A /* LVHomeViewController.m in Sources */,
+				E7FA42F81C85866700E6558A /* LVTabBarController.m in Sources */,
 				E7FA42EE1C85728700E6558A /* UIBarButtonItem+item.m in Sources */,
 				E7FA42F01C85728700E6558A /* UIImage+XMG.m in Sources */,
 				E7FA42E01C8570D400E6558A /* main.m in Sources */,
