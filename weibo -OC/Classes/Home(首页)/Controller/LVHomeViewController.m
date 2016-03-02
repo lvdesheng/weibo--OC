@@ -7,6 +7,7 @@
 //
 
 #import "LVHomeViewController.h"
+#import "UIButton+ImageTitleSpacing.h"
 
 
 
@@ -20,10 +21,29 @@
     [super viewDidLoad];
 
     //设置导航栏的上面内容
-    self.navigationItem.leftBarButtonItem =[UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationbar_friendsearch"] highImage:[UIImage imageNamed:@"navigationbar_friendsearch_highlighted"] addTarget:self action:@selector(friendAdd)];
+//    self.navigationItem.leftBarButtonItem =[UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationbar_friendsearch"] highImage:[UIImage imageNamed:@"navigationbar_friendsearch_highlighted"] addTarget:self action:@selector(friendAdd)];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationbar_pop"] highImage:[UIImage imageNamed:@"navigationbar_pop_highlighted"] addTarget:self action:@selector(pop)];
+//    UIButton *btn = [[UIButton alloc]init];
+//    
+//    [btn setImage:[UIImage imageNamed:@"navigationbar_friendsearch"] forState:UIControlStateNormal];
+//    [btn setTitle:@"加好友" forState:UIControlStateNormal];
+//    [btn sizeToFit];
+//    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    btn.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+//    btn.titleLabel.font = [UIFont systemFontOfSize:10];
+//    UIView *contentView = [[UIView alloc] initWithFrame:btn.bounds];
+//    CGFloat space = 1;
+//    [btn layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:space];
+//    [btn addTarget:self action:@selector(friendAdd) forControlEvents:UIControlEventTouchUpInside];
+//    [contentView addSubview:btn];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:contentView];
     
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem leftItemWithImage:[UIImage imageNamed:@"navigationbar_friendsearch"] highImage:[UIImage imageNamed:@"navigationbar_friendsearch_highlighted"] addTarget:self action:@selector(friendAdd) title:@"加好友" space:0 fontOfSize:10 MKButtonEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop];
+    
+    
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationbar_pop"] highImage:[UIImage imageNamed:@"navigationbar_pop_highlighted"] addTarget:self action:@selector(pop)];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem rightItemWithImage:[UIImage imageNamed:@"navigationbar_pop"] highImage:[UIImage imageNamed:@"navigationbar_pop_highlighted"] addTarget:self action:@selector(pop) title:@"扫一扫" space:0 fontOfSize:10 MKButtonEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop];
 
 
     

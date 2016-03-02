@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIButton+ImageTitleSpacing.h"
 
 @interface UIBarButtonItem (item)
 
@@ -36,4 +37,15 @@
 + (UIBarButtonItem *)itemWithImage: (UIImage *)image selImage: (UIImage *)selimage addTarget:(id)target action:(SEL)action;
 
 + (UIBarButtonItem *)backItemWithImage: (UIImage *)image highImage: (UIImage *)highimage addTarget:(id)target action:(SEL)action title:(NSString *)title;
+
+
+/**
+ *  此方法可以设置item里面的image和title的相对位置
+ */
++ (UIBarButtonItem *)leftItemWithImage: (UIImage *)image highImage: (UIImage *)highimage addTarget:(id)target action:(SEL)action title:(NSString *)title space:(CGFloat)space fontOfSize:(CGFloat)fontOfSize MKButtonEdgeInsetsStyle:(MKButtonEdgeInsetsStyle )style;
+
+/**
+ *  此方法可以设置item里面的image和title的相对位置
+ */
++ (UIBarButtonItem *)rightItemWithImage: (UIImage *)image highImage: (UIImage *)highimage addTarget:(id)target action:(SEL)action title:(NSString *)title space:(CGFloat)space fontOfSize:(CGFloat)fontOfSize MKButtonEdgeInsetsStyle:(MKButtonEdgeInsetsStyle )style;
 @end
