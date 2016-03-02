@@ -8,6 +8,8 @@
 
 #import "LVHomeViewController.h"
 
+
+
 @interface LVHomeViewController ()
 
 @end
@@ -21,6 +23,9 @@
     self.navigationItem.leftBarButtonItem =[UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationbar_friendsearch"] highImage:[UIImage imageNamed:@"navigationbar_friendsearch_highlighted"] addTarget:self action:@selector(friendAdd)];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationbar_pop"] highImage:[UIImage imageNamed:@"navigationbar_pop_highlighted"] addTarget:self action:@selector(pop)];
+    
+
+
     
 }
 

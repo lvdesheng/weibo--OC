@@ -7,6 +7,7 @@
 //
 
 #import "LVDiscoverViewController.h"
+#import "LVSearchBar.h"
 
 @interface LVDiscoverViewController ()
 
@@ -17,25 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //创建搜索框对象
-    UITextField *searchBar = [[UITextField alloc]init];
-    searchBar.height = 35;
+    
+    //创建搜索框对象.
+    LVSearchBar *searchBar = [LVSearchBar searchBar];
     searchBar.width = LVScreenW;
-    searchBar.font = [UIFont systemFontOfSize:15];
-    searchBar.placeholder = @"请搜索";
-    searchBar.placeholderColor = [UIColor grayColor];
-    searchBar.background = [UIImage imageNamed:@"searchbar_textfield_background"];
-    
-    //创建搜索栏左边小放大镜
-    UIImageView *searchIcon = [[UIImageView alloc]init];
-    searchIcon.image = [UIImage imageNamed:@"searchbar_textfield_search_icon"];
-    searchIcon.height = 30;
-    searchIcon.width = 30;
-    searchIcon.contentMode = UIViewContentModeCenter;
-    searchBar.leftViewMode = UITextFieldViewModeAlways;
-    searchBar.leftView = searchIcon;
-    
+    searchBar.height = 35;
     self.navigationItem.titleView = searchBar;
+    searchBar.placeholderColor = [UIColor grayColor];
     
     
 }
