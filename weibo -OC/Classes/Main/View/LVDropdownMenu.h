@@ -9,6 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class LVDropdownMenu;
+
+@protocol LVDropdownMenuDelegate <NSObject>
+
+@optional
+- (void)dropdownMenuDidShow:(LVDropdownMenu *)Menu;
+- (void)dropdownMenuDidDismiss:(LVDropdownMenu *)Menu;
+
+
+@end
+
 @interface LVDropdownMenu : UIView
 
 + (instancetype)menu;
@@ -28,5 +39,7 @@
 
 /**内容控制器*/
 @property (nonatomic, strong) UIViewController *contentContrller;
+
+@property (nonatomic, weak)  id<LVDropdownMenuDelegate>  delegate;
 
 @end

@@ -22,6 +22,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
         //添加一个按钮到tabBar中
         UIButton *plusBtn = [[UIButton alloc]init];
         [plusBtn setImage:[UIImage imageNamed:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];

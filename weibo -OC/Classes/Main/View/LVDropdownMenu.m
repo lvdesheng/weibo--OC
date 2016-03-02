@@ -94,6 +94,13 @@
     //调整灰色图片位置
     self.containerView.x = (self.width - self.containerView.width) * 0.5;
     self.containerView.y = 50;
+    
+    
+    //通知外接,自己显示
+    if ([self.delegate respondsToSelector:@selector(dropdownMenuDidShow:)])
+    {
+        [self.delegate dropdownMenuDidShow:self];
+    }
 }
 
 
@@ -104,9 +111,18 @@
 - (void)dismiss
 {
     [self removeFromSuperview];
+    
+    if ([self.delegate respondsToSelector:@selector(dropdownMenuDidDismiss:)])
+    {
+        [self.delegate dropdownMenuDidShow:self];
+    }
 }
 
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
 
+    [self dismiss];
+}
 
 @end
