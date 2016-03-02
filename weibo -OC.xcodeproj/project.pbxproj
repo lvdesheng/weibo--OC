@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E73C28FC1C86C67D001B8D8D /* LVDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E73C28FB1C86C67D001B8D8D /* LVDropdownMenu.m */; };
 		E73C28FF1C86C6C6001B8D8D /* LVTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73C28FE1C86C6C6001B8D8D /* LVTitleMenuViewController.m */; };
+		E73C29021C86E7E5001B8D8D /* LVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E73C29011C86E7E5001B8D8D /* LVTabBar.m */; };
 		E763720C1C8546970005C143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E763720B1C8546970005C143 /* Assets.xcassets */; };
 		E763721A1C8546970005C143 /* weibo__OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372191C8546970005C143 /* weibo__OCTests.m */; };
 		E76372251C8546970005C143 /* weibo__OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372241C8546970005C143 /* weibo__OCUITests.m */; };
@@ -54,6 +55,8 @@
 		E73C28FB1C86C67D001B8D8D /* LVDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDropdownMenu.m; sourceTree = "<group>"; };
 		E73C28FD1C86C6C6001B8D8D /* LVTitleMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVTitleMenuViewController.h; sourceTree = "<group>"; };
 		E73C28FE1C86C6C6001B8D8D /* LVTitleMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVTitleMenuViewController.m; sourceTree = "<group>"; };
+		E73C29001C86E7E5001B8D8D /* LVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVTabBar.h; sourceTree = "<group>"; };
+		E73C29011C86E7E5001B8D8D /* LVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVTabBar.m; sourceTree = "<group>"; };
 		E76371FC1C8546970005C143 /* weibo -OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo -OC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E763720B1C8546970005C143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E76372101C8546970005C143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -306,6 +309,8 @@
 				E7D8C2111C868CCD005FF8D4 /* LVSearchBar.m */,
 				E73C28FA1C86C67D001B8D8D /* LVDropdownMenu.h */,
 				E73C28FB1C86C67D001B8D8D /* LVDropdownMenu.m */,
+				E73C29001C86E7E5001B8D8D /* LVTabBar.h */,
+				E73C29011C86E7E5001B8D8D /* LVTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 				E7FA43421C859A2C00E6558A /* UIImage+XMG.m in Sources */,
 				E7FA433F1C859A2C00E6558A /* LVMessageViewController.m in Sources */,
 				E7FA43391C859A2C00E6558A /* LVDiscoverViewController.m in Sources */,
+				E73C29021C86E7E5001B8D8D /* LVTabBar.m in Sources */,
 				E7D8C2151C869627005FF8D4 /* UIButton+ImageTitleSpacing.m in Sources */,
 				E7FA43411C859A2C00E6558A /* UIImage+Antialias.m in Sources */,
 				E7FA433C1C859A2C00E6558A /* LVTabBarController.m in Sources */,

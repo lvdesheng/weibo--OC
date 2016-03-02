@@ -12,10 +12,11 @@
 #import "LVMeViewController.h"
 #import "LVMessageViewController.h"
 #import "LVVNavgationController.h"
+#import "LVTabBar.h"
 
 
 
-@interface LVTabBarController ()
+@interface LVTabBarController ()<LVTabBarDelegate>
 
 @end
 
@@ -37,6 +38,11 @@
     //我
     LVMeViewController *meVC = [[LVMeViewController alloc]init];
     [self addChildController:meVC title:@"我" image:@"tabbar_profile" selImage:@"tabbar_profile_selected"];
+    
+    //更换系统tabBar
+    LVTabBar *tabBar = [[LVTabBar alloc]init];
+    tabBar.delegate = self;
+    [self setValue:tabBar forKeyPath:@"tabBar"];
     
 
 }
@@ -68,6 +74,14 @@
     LVVNavgationController *navVC = [[LVVNavgationController alloc]initWithRootViewController:childVC];
     
     [self addChildViewController:navVC];
+}
+
+#pragma mark - LVTabBarDelegate
+- (void)tabBarDidClickPlusButton:(LVTabBar *)tabBar
+{
+    UIViewController *vc = [[UIViewController alloc]init];
+    vc.view.backgroundColor = [UIColor redColor];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end
