@@ -7,6 +7,9 @@
 //
 
 #import "LVHomeViewController.h"
+#import "LVTitleMenuViewController.h"
+#import "LVDropdownMenu.h"
+
 
 
 
@@ -47,7 +50,7 @@
     CGFloat space = 2;
     [button layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleRight imageTitleSpace:space];
     
-    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.titleView = button;
     
@@ -66,30 +69,18 @@
     LVFunc
 }
 
-- (void)buttonClick
+- (void)buttonClick:(UIButton *)button
 {
-     // 这样获得的窗口，是目前显示在屏幕最上面的窗口
-    // self.view.window = [UIApplication sharedApplication].keyWindow
-    // 建议使用[UIApplication sharedApplication].keyWindow获得窗口
-    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    //创建下拉菜单
+    LVDropdownMenu *menu = [LVDropdownMenu menu];
     
-    //添加蒙版(用来拦截灰色以外的点击事件)
-    UIView *cover = [[UIView alloc]init];
-    cover.backgroundColor = [UIColor clearColor];
-    cover.frame = window.frame;
-    [window addSubview:cover];
+    //设置内容
+    LVTitleMenuViewController *menuVC = [[LVTitleMenuViewController alloc]init];
+    menuVC.view.height = 40 * 4;
+    menu.contentContrller = menuVC;
     
-    //添加带箭头的灰色图片
-    UIImageView *dropdownMenu = [[UIImageView alloc]init];
-    dropdownMenu.image = [UIImage imageNamed:@"popover_background"];
-    dropdownMenu.width = 217;
-    dropdownMenu.height = 217;
-    dropdownMenu.y = 40;
-    
-    [dropdownMenu addSubview:[UIButton buttonWithType:UIButtonTypeInfoLight]];
-    [window addSubview:dropdownMenu];
-    
-    
+    //显示
+    [menu showFrom:button];
 }
 
 - (void)didReceiveMemoryWarning {
