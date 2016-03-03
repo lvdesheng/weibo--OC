@@ -22,6 +22,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.tableView.bounces = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +71,9 @@
         cell.textLabel.text = @"全部";
 
     }
+    
+    //cell不能点击.
+//    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     return cell;
 }
