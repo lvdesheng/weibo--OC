@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LVTabBarController.h"
-
+#import "LVNewFeatureController.h"
 
 @interface AppDelegate ()
 
@@ -24,10 +24,13 @@
     
     //设置根控制器
     
-    LVTabBarController *tabBarVC = [[LVTabBarController alloc]init];
+//    LVTabBarController *tabBarVC = [[LVTabBarController alloc]init];
 
-    self.window.rootViewController = tabBarVC;
+//    self.window.rootViewController = tabBarVC;
 
+    LVNewFeatureController *FeatureController = [[LVNewFeatureController alloc]init];
+    
+    self.window.rootViewController = FeatureController;
     
     [self.window makeKeyAndVisible];
     
