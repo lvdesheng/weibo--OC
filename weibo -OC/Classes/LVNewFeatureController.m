@@ -46,6 +46,13 @@
         ImageView.image = [UIImage imageNamed:name];
         
         [ScrollView addSubview:ImageView];
+        
+        //如果是最后一个imageView,就在里面添加内容
+        if (i == LVNewFeatureCount - 1){
+            
+            [self setupLastImageView:ImageView];
+            
+        }
     }
     
     //设置scrollView的其他属性
@@ -68,6 +75,8 @@
     PageControl.centerY = scrollH - 50;
     [self.view addSubview:PageControl];
     self.PageControl = PageControl;
+    
+
    
     
 }
@@ -82,6 +91,37 @@
     // 1.5四舍五入 1.5 + 0.5 = 2.0 强转为整数(int)2.0= 2
     // 1.6四舍五入 1.6 + 0.5 = 2.1 强转为整数(int)2.1= 2
     // 0.7四舍五入 0.7 + 0.5 = 1.2 强转为整数(int)1.2= 1
+    
+}
+
+
+#pragma mark - 其他方法
+- (void)setupLastImageView:(UIImageView *)imageView
+{
+    //开启交互功能
+    imageView.userInteractionEnabled = YES;
+    
+    //1.分享给大家
+    UIButton *shareBTN = [[UIButton alloc]init];
+    [shareBTN setImage:[UIImage imageNamed:@"new_feature_share_false"] forState:UIControlStateNormal];
+    [shareBTN setImage:[UIImage imageNamed:@"new_feature_share_true"] forState:UIControlStateSelected];
+    [shareBTN setTitle:@"分享给大家" forState:UIControlStateNormal];
+    [shareBTN setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    shareBTN.titleLabel.font = [UIFont systemFontOfSize:15];
+    
+    shareBTN.width = 200;
+    shareBTN.height = 30;
+    shareBTN.centerX = imageView.width * 0.5;
+    shareBTN.centerY = imageView.height * 0.65;
+    
+    shareBTN.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+
+    
+    [imageView addSubview:shareBTN];
+    
+    //2.开始微博
+#warning 添加开始微博按钮.
+    
     
 }
 
