@@ -7,6 +7,8 @@
 //
 
 #import "LVNewFeatureController.h"
+#import "LVTabBarController.h"
+
 #define LVNewFeatureCount 4
 @interface LVNewFeatureController ()<UIScrollViewDelegate>
 
@@ -107,6 +109,7 @@
     [shareBTN setImage:[UIImage imageNamed:@"new_feature_share_true"] forState:UIControlStateSelected];
     [shareBTN setTitle:@"分享给大家" forState:UIControlStateNormal];
     [shareBTN setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [shareBTN addTarget:self action:@selector(shareBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     shareBTN.titleLabel.font = [UIFont systemFontOfSize:15];
     
     shareBTN.width = 200;
@@ -114,15 +117,50 @@
     shareBTN.centerX = imageView.width * 0.5;
     shareBTN.centerY = imageView.height * 0.65;
     
-    shareBTN.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    shareBTN.titleEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 0);
 
     
     [imageView addSubview:shareBTN];
     
     //2.开始微博
-#warning 添加开始微博按钮.
+    UIButton *startBtn = [[UIButton alloc]init];
+    [startBtn setBackgroundImage:[UIImage imageNamed:@"new_feature_finish_button"] forState:UIControlStateNormal];
+    [startBtn setBackgroundImage:[UIImage imageNamed:@"new_feature_finish_button_highlighted"] forState:UIControlStateHighlighted];
+    [startBtn setTitle:@"开始微博" forState:UIControlStateNormal];
+    startBtn.size = startBtn.currentBackgroundImage.size;
+    startBtn.centerX = shareBTN.centerX + 4;
+    startBtn.centerY = imageView.height * 0.7;
+    [startBtn addTarget:self action:@selector(startButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [imageView addSubview:startBtn];
     
     
 }
+
+
+#pragma mark - 监听按钮点击
+- (void)shareBtnClick:(UIButton *)shareBtn
+{
+    //状态取反
+    shareBtn.selected = !shareBtn.isSelected;
+}
+
+- (void)startButtonClick
+{
+    // 切换到HWTabBarController
+    /*
+     切换控制器的手段
+     1.push：依赖于UINavigationController，控制器的切换是可逆的，比如A切换到B，B又可以回到A
+     2.modal：控制器的切换是可逆的，比如A切换到B，B又可以回到A
+     3.切换window的rootViewController
+     */
+    
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    
+    window.rootViewController = [[LVTabBarController alloc]init];
+
+}
+
+
 
 @end
