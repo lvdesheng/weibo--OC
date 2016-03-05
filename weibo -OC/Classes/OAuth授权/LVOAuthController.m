@@ -8,7 +8,7 @@
 
 #import "LVOAuthController.h"
 #import "AFNetworking.h"
-#import "LVAcount.h"
+
 
 #import "SVProgressHUD.h"
 #import "LVAccountTool.h"
@@ -115,11 +115,11 @@
     mgr.responseSerializer = [AFJSONResponseSerializer serializer];
     //请求参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    parameters[@"client_id"] = @"1266961611";
+    parameters[@"client_id"]     = @"1266961611";
     parameters[@"client_secret"] = @"331390a9396a0cc7f879b5a5a9eb5ded";
-    parameters[@"grant_type"] = @"authorization_code";
-    parameters[@"code"] = code;
-    parameters[@"redirect_uri"] = @"http://www.baidu.com";
+    parameters[@"grant_type"]    = @"authorization_code";
+    parameters[@"code"]          = code;
+    parameters[@"redirect_uri"]  = @"http://www.baidu.com";
     
  
     //发送请求

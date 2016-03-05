@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class LVAcount;
+#import "LVAcount.h"
 
 @interface LVAccountTool : NSObject
 /**

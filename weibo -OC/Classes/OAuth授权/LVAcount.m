@@ -16,9 +16,10 @@
 {
     LVAcount *acount = [[LVAcount alloc]init];
     acount.access_token = dict[@"access_token"];
-    acount.expires_in = dict[@"expires_in"];
-    acount.uid = dict[@"uid"];
-    
+    acount.expires_in   = dict[@"expires_in"];
+    acount.uid          = dict[@"uid"];
+    //获得账号储存时间
+    acount.creat_time = [NSDate date];
     return acount;
 }
 
@@ -30,9 +31,10 @@
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeObject:self.access_token forKey:@"access_token"];
-    [encoder encodeObject:self.expires_in forKey:@"expires_in"];
-    [encoder encodeObject:self.uid forKey:@"uid"];
-    [encoder encodeObject:self.creat_time forKey:@"creat_time"];
+    [encoder encodeObject:self.expires_in   forKey:@"expires_in"];
+    [encoder encodeObject:self.uid          forKey:@"uid"];
+    [encoder encodeObject:self.creat_time   forKey:@"creat_time"];
+    [encoder encodeObject:self.name         forKey:@"name"];
 }
 
 /**
@@ -45,9 +47,10 @@
     if (self) {
         
         self.access_token = [decoder decodeObjectForKey:@"access_token"];
-        self.expires_in = [decoder decodeObjectForKey:@"expires_in"];
-        self.uid = [decoder decodeObjectForKey:@"uid"];
-        self.creat_time = [decoder decodeObjectForKey:@"creat_time"];
+        self.expires_in   = [decoder decodeObjectForKey:@"expires_in"];
+        self.uid          = [decoder decodeObjectForKey:@"uid"];
+        self.creat_time   = [decoder decodeObjectForKey:@"creat_time"];
+        self.name         = [decoder decodeObjectForKey:@"name"];
         
     }
     return self;

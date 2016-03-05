@@ -10,10 +10,7 @@
 #import "LVTitleMenuViewController.h"
 #import "LVDropdownMenu.h"
 #import "AFNetworking.h"
-
-
-
-
+#import "LVAccountTool.h"
 
 @interface LVHomeViewController ()<LVDropdownMenuDelegate>
 
@@ -23,40 +20,90 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //设置导航栏内容
+    [self setupNavigationBar];
+    
+    //获取用户信息
+    [self setupUserInfo];
+    
+
+    
+}
+
+
+
+#pragma mark - 初始化
+- (void)setupUserInfo
+{
+    /**
+     https://api.weibo.com/2/users/show.json
+     access_token	true	string	采用OAuth授权方式为必填参数，OAuth授权后获得。
+     uid	false	int64	需要查询的用户ID。
+     */
+    
+    //请求管理者
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    
+    //拼接请求参数
+    LVAcount *account = [LVAccountTool account];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"access_token"] = account.access_token;
+    parameters[@"uid"] = account.uid;
+
+    
+    //发送请求
+    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //标题按钮
+        UIButton *titleButton = (UIButton *)self.navigationItem.titleView;
+        //设置名字
+        NSString *name = responseObject[@"name"];
+        [titleButton setTitle:name forState:UIControlStateNormal];
+        //存入沙盒
+        account.name = name;
+        [LVAccountTool saveAccount:account];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败-%@",error);
+    }];
+
+}
+- (void)setupNavigationBar
+{
 
     //设置导航栏的上面内容
-   
+    
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem leftItemWithImage:[UIImage imageNamed:@"navigationbar_friendsearch"] highImage:[UIImage imageNamed:@"navigationbar_friendsearch_highlighted"] addTarget:self action:@selector(friendAdd) title:@"加好友" space:0 fontOfSize:10 MKButtonEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop];
     
     
-//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationbar_pop"] highImage:[UIImage imageNamed:@"navigationbar_pop_highlighted"] addTarget:self action:@selector(pop)];
+    
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem rightItemWithImage:[UIImage imageNamed:@"navigationbar_pop"] highImage:[UIImage imageNamed:@"navigationbar_pop_highlighted"] addTarget:self action:@selector(pop) title:@"扫一扫" space:0 fontOfSize:10 MKButtonEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop];
-
+    
     
     /*中间标题按钮*/
     UIButton *button = [[UIButton alloc]init];
     button.width = 150;
     button.height = 30;
-//    button.backgroundColor = LVRandomColor;
+    //    button.backgroundColor = LVRandomColor;
     
     //设置图片和文字
-    [button setTitle:@"首页" forState:UIControlStateNormal];
+    
+    NSString *name = [LVAccountTool account].name;
+    
+    [button setTitle:name?name:@"首页" forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:17];
     
     //button的图片和title调换位置
-    CGFloat space = 2;
-    [button layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleRight imageTitleSpace:space];
+    CGFloat space = 4;
+    [button layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleLeft imageTitleSpace:space];
     
     [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.titleView = button;
-    
-
-    
 }
 
 

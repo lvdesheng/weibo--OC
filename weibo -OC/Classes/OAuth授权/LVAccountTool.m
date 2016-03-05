@@ -7,7 +7,7 @@
 //
 
 #import "LVAccountTool.h"
-#import "LVAcount.h"
+
 #define LVAccountPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject]stringByAppendingPathComponent:@"account.archive"]
 
 @implementation LVAccountTool
