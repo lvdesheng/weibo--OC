@@ -10,6 +10,7 @@
 #import "LVTabBarController.h"
 #import "LVNewFeatureController.h"
 #import "LVOAuthController.h"
+#import "LVAcount.h"
 
 @interface AppDelegate ()
 
@@ -25,27 +26,35 @@
     
     //设置根控制器
     
-    LVOAuthController *OAuthController = [[LVOAuthController alloc]init];
-
-    self.window.rootViewController = OAuthController;
+    //沙盒路径
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    NSString *path = [doc stringByAppendingPathComponent:@"account.archive"];
     
-//    //设置启动逻辑
-//    NSString *key = @"CFBundleVersion";
-//    //上一次使用的版本号(存在沙盒)
-//    NSString *lastVersion =  [[NSUserDefaults standardUserDefaults] objectForKey:key];
-//    //当前版本号(从info.plist中获取)
-//    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
-//    
-//    if ([currentVersion isEqualToString:lastVersion]){//版本号相同,这次打开的和上次打开的相同
-//        self.window.rootViewController = [[LVTabBarController alloc]init];
-//    }else{//和上次打开的不一样
-//        self.window.rootViewController = [[LVNewFeatureController alloc]init];
-//    
-//        //将当前版本号存入沙盒
-//        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
-//        //刷新
-//        [[NSUserDefaults standardUserDefaults]synchronize];
-//    }
+    LVAcount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    
+    if (account){//之前登陆过
+        //设置启动逻辑
+        NSString *key = @"CFBundleVersion";
+        //上一次使用的版本号(存在沙盒)
+        NSString *lastVersion =  [[NSUserDefaults standardUserDefaults] objectForKey:key];
+        //当前版本号(从info.plist中获取)
+        NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
+        
+        if ([currentVersion isEqualToString:lastVersion]){//版本号相同,这次打开的和上次打开的相同
+            self.window.rootViewController = [[LVTabBarController alloc]init];
+        }else{//和上次打开的不一样
+            self.window.rootViewController = [[LVNewFeatureController alloc]init];
+            
+            //将当前版本号存入沙盒
+            [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
+            //刷新
+            [[NSUserDefaults standardUserDefaults]synchronize];
+        }
+    }else{
+        self.window.rootViewController = [[LVOAuthController alloc]init];
+    }
+    
+
     
 
     

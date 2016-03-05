@@ -8,6 +8,11 @@
 
 #import "LVOAuthController.h"
 #import "AFNetworking.h"
+#import "LVAcount.h"
+#import "LVTabBarController.h"
+#import "LVNewFeatureController.h"
+#import "SVProgressHUD.h"
+
 
 @interface LVOAuthController ()<UIWebViewDelegate>
 
@@ -40,10 +45,26 @@
     [WebView loadRequest:Request];
     
     
+    
 }
 
 
 #pragma mark - UIWebViewDelegate
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [SVProgressHUD showWithStatus:@"正在加载"];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [SVProgressHUD dismiss];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
+{
+    [SVProgressHUD dismiss];
+}
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
         //获取url
@@ -60,10 +81,10 @@
         
         //利用code换取一个accessToken
         [self accessTokenWithCode:code];
-        NSLog(@"%@,%@",url,code);
+
+        return  NO;
     }
-    
-    NSLog(@"%@",url);
+
     return YES;
     
 }
@@ -103,10 +124,39 @@
     //发送请求
     [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
-        NSLog(@"请求成功%@",responseObject);
+        [SVProgressHUD dismiss];
+        //沙盒路径
+        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+        NSString *path = [doc stringByAppendingPathComponent:@"account.archive"];
         
+        // 将返回的账号字典数据 --> 模型，存进沙盒
+        LVAcount *account = [LVAcount accountWithDict:responseObject];
+        // 自定义对象的存储必须用NSKeyedArchiver，不再有什么writeToFile方法
+        [NSKeyedArchiver archiveRootObject:account toFile:path];
+        
+        //设置窗口根控制器
+        //设置启动逻辑
+        NSString *key = @"CFBundleVersion";
+        //上一次使用的版本号(存在沙盒)
+        NSString *lastVersion =  [[NSUserDefaults standardUserDefaults] objectForKey:key];
+        //当前版本号(从info.plist中获取)
+        NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
+        
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        if ([currentVersion isEqualToString:lastVersion]){//版本号相同,这次打开的和上次打开的相同
+            window.rootViewController = [[LVTabBarController alloc]init];
+        }else{//和上次打开的不一样
+            window.rootViewController = [[LVNewFeatureController alloc]init];
+            
+            //将当前版本号存入沙盒
+            [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
+            //刷新
+            [[NSUserDefaults standardUserDefaults]synchronize];
+
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"请求失败%@",error);
+        LVLog(@"请求失败%@",error);
+        [SVProgressHUD dismiss];
     }];
     
     
