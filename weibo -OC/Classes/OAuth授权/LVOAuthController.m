@@ -9,8 +9,7 @@
 #import "LVOAuthController.h"
 #import "AFNetworking.h"
 #import "LVAcount.h"
-#import "LVTabBarController.h"
-#import "LVNewFeatureController.h"
+
 #import "SVProgressHUD.h"
 #import "LVAccountTool.h"
 
@@ -129,31 +128,17 @@
         [SVProgressHUD dismiss];
 
         
-        // 将返回的账号字典数据 --> 模型，存进沙盒
+        // 将返回的账号字典数据
         LVAcount *account = [LVAcount accountWithDict:responseObject];
-
+        
+        //储存账号信息
         [LVAccountTool saveAccount:account];
         
-        //设置窗口根控制器
-        //设置启动逻辑
-        NSString *key = @"CFBundleVersion";
-        //上一次使用的版本号(存在沙盒)
-        NSString *lastVersion =  [[NSUserDefaults standardUserDefaults] objectForKey:key];
-        //当前版本号(从info.plist中获取)
-        NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
-        
+        //切换window根控制器
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        if ([currentVersion isEqualToString:lastVersion]){//版本号相同,这次打开的和上次打开的相同
-            window.rootViewController = [[LVTabBarController alloc]init];
-        }else{//和上次打开的不一样
-            window.rootViewController = [[LVNewFeatureController alloc]init];
-            
-            //将当前版本号存入沙盒
-            [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
-            //刷新
-            [[NSUserDefaults standardUserDefaults]synchronize];
-
-        }
+        [window switchRootViewController];
+    
+    
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         LVLog(@"请求失败%@",error);
         [SVProgressHUD dismiss];

@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "LVTabBarController.h"
-#import "LVNewFeatureController.h"
 #import "LVOAuthController.h"
 #import "LVAcount.h"
 #import "LVAccountTool.h"
@@ -31,31 +29,12 @@
     LVAcount *account = [LVAccountTool account];
     
     if (account){//之前登陆过
-        //设置启动逻辑
-        NSString *key = @"CFBundleVersion";
-        //上一次使用的版本号(存在沙盒)
-        NSString *lastVersion =  [[NSUserDefaults standardUserDefaults] objectForKey:key];
-        //当前版本号(从info.plist中获取)
-        NSString *currentVersion = [NSBundle mainBundle].infoDictionary[key];
-        
-        if ([currentVersion isEqualToString:lastVersion]){//版本号相同,这次打开的和上次打开的相同
-            self.window.rootViewController = [[LVTabBarController alloc]init];
-        }else{//和上次打开的不一样
-            self.window.rootViewController = [[LVNewFeatureController alloc]init];
-            
-            //将当前版本号存入沙盒
-            [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:key];
-            //刷新
-            [[NSUserDefaults standardUserDefaults]synchronize];
-        }
+        [self.window switchRootViewController];
     }else{
         self.window.rootViewController = [[LVOAuthController alloc]init];
     }
-    
 
-    
-
-    
+    //显示窗口
     [self.window makeKeyAndVisible];
     
 
