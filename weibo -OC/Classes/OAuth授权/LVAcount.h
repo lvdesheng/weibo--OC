@@ -29,6 +29,9 @@
  */
 @property (nonatomic, copy) NSString *uid;
 
+/**access_token 创建时间*/
+@property (nonatomic, strong) NSDate *creat_time;
+
 + (instancetype)accountWithDict:(NSDictionary *)dict;
 
 @end

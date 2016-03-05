@@ -11,6 +11,8 @@
 #import "LVNewFeatureController.h"
 #import "LVOAuthController.h"
 #import "LVAcount.h"
+#import "LVAccountTool.h"
+
 
 @interface AppDelegate ()
 
@@ -26,11 +28,7 @@
     
     //设置根控制器
     
-    //沙盒路径
-    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-    NSString *path = [doc stringByAppendingPathComponent:@"account.archive"];
-    
-    LVAcount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    LVAcount *account = [LVAccountTool account];
     
     if (account){//之前登陆过
         //设置启动逻辑

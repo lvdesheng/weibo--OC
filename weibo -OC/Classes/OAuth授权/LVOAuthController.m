@@ -12,6 +12,8 @@
 #import "LVTabBarController.h"
 #import "LVNewFeatureController.h"
 #import "SVProgressHUD.h"
+#import "LVAccountTool.h"
+
 
 
 @interface LVOAuthController ()<UIWebViewDelegate>
@@ -125,14 +127,12 @@
     [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
         [SVProgressHUD dismiss];
-        //沙盒路径
-        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-        NSString *path = [doc stringByAppendingPathComponent:@"account.archive"];
+
         
         // 将返回的账号字典数据 --> 模型，存进沙盒
         LVAcount *account = [LVAcount accountWithDict:responseObject];
-        // 自定义对象的存储必须用NSKeyedArchiver，不再有什么writeToFile方法
-        [NSKeyedArchiver archiveRootObject:account toFile:path];
+
+        [LVAccountTool saveAccount:account];
         
         //设置窗口根控制器
         //设置启动逻辑
