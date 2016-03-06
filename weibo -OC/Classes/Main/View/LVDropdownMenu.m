@@ -40,7 +40,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        //清楚颜色
+        //清除颜色
         self.backgroundColor = [UIColor clearColor];
     }
     return self;

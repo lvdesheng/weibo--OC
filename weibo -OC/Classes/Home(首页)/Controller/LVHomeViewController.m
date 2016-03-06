@@ -16,6 +16,8 @@
 
 @interface LVHomeViewController ()<LVDropdownMenuDelegate>
 
+
+
 @end
 
 @implementation LVHomeViewController
@@ -28,8 +30,6 @@
     
     //获取用户信息
     [self setupUserInfo];
-    
-
     
 }
 
@@ -84,19 +84,19 @@
     
     
     /*中间标题按钮*/
-    LVTitleButton *titlebutton = [[LVTitleButton alloc]init];
-
-    //    button.backgroundColor = LVRandomColor;
+    LVTitleButton *button = [[LVTitleButton alloc]init];
     
     //设置图片和文字
     
     NSString *name = [LVAccountTool account].name;
     
-    [titlebutton setTitle:name?name:@"首页" forState:UIControlStateNormal];
-
-    [titlebutton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:name?name:@"首页" forState:UIControlStateNormal];
     
-    self.navigationItem.titleView = titlebutton;
+
+    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.titleView = button;
+    
 }
 
 
@@ -139,8 +139,9 @@
  */
 - (void)dropdownMenuDidShow:(LVDropdownMenu *)Menu
 {
-    UIButton *titleButton = (UIButton *)self.navigationItem.titleView;
+    LVTitleButton *titleButton = (LVTitleButton *)self.navigationItem.titleView;
     titleButton.selected = NO;
+
 }
 /**
  *  下拉菜单销毁
@@ -149,8 +150,9 @@
  */
 - (void)dropdownMenuDidDismiss:(LVDropdownMenu *)Menu
 {
-    UIButton *titleButton = (UIButton *)self.navigationItem.titleView;
+    LVTitleButton *titleButton = (LVTitleButton *)self.navigationItem.titleView;
     titleButton.selected = YES;
+
 
 }
 
