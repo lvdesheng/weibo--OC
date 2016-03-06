@@ -11,6 +11,8 @@
 #import "LVDropdownMenu.h"
 #import "AFNetworking.h"
 #import "LVAccountTool.h"
+#import "LVTitleButton.h"
+
 
 @interface LVHomeViewController ()<LVDropdownMenuDelegate>
 
@@ -82,28 +84,19 @@
     
     
     /*中间标题按钮*/
-    UIButton *button = [[UIButton alloc]init];
-    button.width = 150;
-    button.height = 30;
+    LVTitleButton *titlebutton = [[LVTitleButton alloc]init];
+
     //    button.backgroundColor = LVRandomColor;
     
     //设置图片和文字
     
     NSString *name = [LVAccountTool account].name;
     
-    [button setTitle:name?name:@"首页" forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateSelected];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:17];
+    [titlebutton setTitle:name?name:@"首页" forState:UIControlStateNormal];
+
+    [titlebutton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     
-    //button的图片和title调换位置
-    CGFloat space = 4;
-    [button layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleLeft imageTitleSpace:space];
-    
-    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.navigationItem.titleView = button;
+    self.navigationItem.titleView = titlebutton;
 }
 
 
