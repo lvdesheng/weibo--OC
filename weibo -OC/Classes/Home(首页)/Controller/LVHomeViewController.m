@@ -21,13 +21,20 @@
 @interface LVHomeViewController ()<LVDropdownMenuDelegate>
 
 /**微博数组（里面放的都是微博字典，一个字典对象就代表一条微博）*/
-@property (nonatomic, strong) NSArray *statuses;
+@property (nonatomic, strong) NSMutableArray *statuses;
 
 @end
 
 @implementation LVHomeViewController
 
-
+- (NSMutableArray *)statuses
+{
+    if (!_statuses) {
+        _statuses = [[NSMutableArray alloc] init];
+        
+    }
+    return _statuses;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,13 +45,20 @@
     //获取用户信息
     [self setupUserInfo];
     
-    //加载最新微博数据
-    [self loadNewStatus];
+    
+    //集成刷新控件
+    [self setupRefresh];
     
 }
 
-#pragma mark - 网络请求
-- (void)loadNewStatus
+- (void)setupRefresh
+{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+}
+
+- (void)refreshStateChange:(UIRefreshControl *)refreshControl
 {
     //请求管理者
     AFHTTPSessionManager *mgr =  [AFHTTPSessionManager manager];
@@ -52,20 +66,39 @@
     LVAcount *account = [LVAccountTool account];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"access_token"] = account.access_token;
+    
+    // 取出最前面的微博（最新的微博，ID最大的微博）
+    LVStatus *firstStatus = [self.statuses firstObject];
+    if (firstStatus){
+        //since_id	false	int64	若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
+        parameters[@"since_id"] = firstStatus.idstr;
+    }
+    
     //发送请求
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-   
+        
         // 将 "微博字典"数组 转为 "微博模型"数组
         
-        self.statuses = [LVStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *newStauses = [LVStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        // 将最新的微博数据，添加到总数组的最前面
+        
+        NSRange range = NSMakeRange(0, newStauses.count);
+        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
+        [self.statuses insertObjects:newStauses atIndexes:set];
         
         //刷新表格
         [self.tableView reloadData];
         
+        //结束刷新
+        [refreshControl endRefreshing];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         LVLog(@"请求微博数据失败 - %@",error);
+        //结束刷新
+        [refreshControl endRefreshing];
     }];
+
 
 }
 
@@ -221,7 +254,7 @@
     cell.detailTextLabel.text = status.text;
     //设置头像
     
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_big"]];
     
     return cell;
 
