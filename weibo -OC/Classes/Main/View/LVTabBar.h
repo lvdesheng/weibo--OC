@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class LVTabBar;
 
-#warning 因为HWTabBar继承自UITabBar，所以称为HWTabBar的代理，也必须实现UITabBar的代理协议
+#warning 因为LVTabBar继承自UITabBar，所以称为LVTabBar的代理，也必须实现UITabBar的代理协议
 @protocol LVTabBarDelegate <UITabBarDelegate>
 
 @optional
