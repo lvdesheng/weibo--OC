@@ -13,16 +13,27 @@
 #import "LVAccountTool.h"
 #import "LVTitleButton.h"
 #import <UIImageView+WebCache.h>
+#import "LVStatus.h"
+#import "LVUser.h"
 
 
 @interface LVHomeViewController ()<LVDropdownMenuDelegate>
 
 /**微博数组（里面放的都是微博字典，一个字典对象就代表一条微博）*/
-@property (nonatomic, strong) NSArray *statuses;
+@property (nonatomic, strong) NSMutableArray *statuses;
 
 @end
 
 @implementation LVHomeViewController
+
+- (NSMutableArray *)statuses
+{
+    if (!_statuses) {
+        _statuses = [[NSMutableArray alloc] init];
+        
+    }
+    return _statuses;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,7 +62,14 @@
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         //获取微博字典数组
-        self.statuses = responseObject[@"statuses"];
+        NSArray *dictArray = responseObject[@"statuses"];
+        // 将 "微博字典"数组 转为 "微博模型"数组
+        
+        for (NSDictionary *dict in dictArray) {
+            LVStatus *status = [LVStatus initWithDict:dict];
+            [self.statuses addObject:status];
+        }
+        
         
         //刷新表格
         [self.tableView reloadData];
@@ -88,12 +106,14 @@
         //标题按钮
         UIButton *titleButton = (UIButton *)self.navigationItem.titleView;
         //设置名字
-        NSString *name = responseObject[@"name"];
-        [titleButton setTitle:name forState:UIControlStateNormal];
+//        NSString *name = responseObject[@"name"];
+        LVUser *user = [LVUser initWithDict:responseObject];
+        [titleButton setTitle:user.name forState:UIControlStateNormal];
         //存入沙盒
-        account.name = name;
+        account.name = user.name;
         [LVAccountTool saveAccount:account];
         
+
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求失败-%@",error);
     }];
@@ -202,18 +222,20 @@
         }
         
     //取出对应行的的微博字典
-    NSDictionary *status = self.statuses[indexPath.row];
+    LVStatus *status = self.statuses[indexPath.row];
     
     //取出这条微博的作者
-    NSDictionary *user = status[@"user"];
-    cell.textLabel.text = user[@"name"];
+//    NSDictionary *user = status[@"user"];
+//    cell.textLabel.text = user[@"name"];
     
+    LVUser *user = status.user;
+    cell.textLabel.text = user.name;
     //设置微博文字
-    cell.detailTextLabel.text = status[@"text"];
+    cell.detailTextLabel.text = status.text;
     //设置头像
     
-    NSString *imageUrl = user[@"profile_image_url"];
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
+//    NSString *imageUrl = user[@"profile_image_url"];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
     
     return cell;
 

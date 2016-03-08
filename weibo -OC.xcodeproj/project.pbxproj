@@ -36,6 +36,8 @@
 		E77420EB1C8E9805007E1F19 /* LVtest1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420D01C8E9805007E1F19 /* LVtest1ViewController.m */; };
 		E77420EC1C8E9805007E1F19 /* LVtest1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77420D11C8E9805007E1F19 /* LVtest1ViewController.xib */; };
 		E77420EF1C8E984C007E1F19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420EE1C8E984C007E1F19 /* AppDelegate.m */; };
+		E77420F21C8E989D007E1F19 /* LVStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420F11C8E989D007E1F19 /* LVStatus.m */; };
+		E77420F51C8E9A75007E1F19 /* LVUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420F41C8E9A75007E1F19 /* LVUser.m */; };
 		E7FE748D1C89BF4900C37BF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FE748C1C89BF4900C37BF2 /* Assets.xcassets */; };
 		EDECFDE0549BDB0626C7A8E4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6DB9011A5D7E2DF181C1E5 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -121,6 +123,10 @@
 		E77420D11C8E9805007E1F19 /* LVtest1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LVtest1ViewController.xib; sourceTree = "<group>"; };
 		E77420ED1C8E984C007E1F19 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E77420EE1C8E984C007E1F19 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E77420F01C8E989D007E1F19 /* LVStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVStatus.h; sourceTree = "<group>"; };
+		E77420F11C8E989D007E1F19 /* LVStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVStatus.m; sourceTree = "<group>"; };
+		E77420F31C8E9A75007E1F19 /* LVUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVUser.h; sourceTree = "<group>"; };
+		E77420F41C8E9A75007E1F19 /* LVUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVUser.m; sourceTree = "<group>"; };
 		E7FE748C1C89BF4900C37BF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA6DB9011A5D7E2DF181C1E5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -293,6 +299,10 @@
 		E77420891C8E9805007E1F19 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E77420F01C8E989D007E1F19 /* LVStatus.h */,
+				E77420F11C8E989D007E1F19 /* LVStatus.m */,
+				E77420F31C8E9A75007E1F19 /* LVUser.h */,
+				E77420F41C8E9A75007E1F19 /* LVUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -726,6 +736,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E77420F51C8E9A75007E1F19 /* LVUser.m in Sources */,
 				E77420DE1C8E9805007E1F19 /* LVNewFeatureController.m in Sources */,
 				E77420D21C8E9805007E1F19 /* LVDiscoverViewController.m in Sources */,
 				E77420EB1C8E9805007E1F19 /* LVtest1ViewController.m in Sources */,
@@ -748,6 +759,7 @@
 				E77420DC1C8E9805007E1F19 /* LVMeViewController.m in Sources */,
 				E77420EF1C8E984C007E1F19 /* AppDelegate.m in Sources */,
 				E77420E41C8E9805007E1F19 /* UIImage+Antialias.m in Sources */,
+				E77420F21C8E989D007E1F19 /* LVStatus.m in Sources */,
 				E77420D71C8E9805007E1F19 /* LVTabBarController.m in Sources */,
 				E77420D41C8E9805007E1F19 /* LVTitleMenuViewController.m in Sources */,
 				E77420E81C8E9805007E1F19 /* UIView+xib.m in Sources */,
