@@ -38,6 +38,8 @@
 		E77420EF1C8E984C007E1F19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420EE1C8E984C007E1F19 /* AppDelegate.m */; };
 		E77420F21C8E989D007E1F19 /* LVStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420F11C8E989D007E1F19 /* LVStatus.m */; };
 		E77420F51C8E9A75007E1F19 /* LVUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420F41C8E9A75007E1F19 /* LVUser.m */; };
+		E79BE6BE1C8EEABD009B9ABC /* LVFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E79BE6BD1C8EEABD009B9ABC /* LVFooter.m */; };
+		E79BE6C01C8EEB03009B9ABC /* LVFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79BE6BF1C8EEB03009B9ABC /* LVFooter.xib */; };
 		E7FE748D1C89BF4900C37BF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FE748C1C89BF4900C37BF2 /* Assets.xcassets */; };
 		EDECFDE0549BDB0626C7A8E4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6DB9011A5D7E2DF181C1E5 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -127,6 +129,9 @@
 		E77420F11C8E989D007E1F19 /* LVStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVStatus.m; sourceTree = "<group>"; };
 		E77420F31C8E9A75007E1F19 /* LVUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVUser.h; sourceTree = "<group>"; };
 		E77420F41C8E9A75007E1F19 /* LVUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVUser.m; sourceTree = "<group>"; };
+		E79BE6BC1C8EEABD009B9ABC /* LVFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVFooter.h; sourceTree = "<group>"; };
+		E79BE6BD1C8EEABD009B9ABC /* LVFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVFooter.m; sourceTree = "<group>"; };
+		E79BE6BF1C8EEB03009B9ABC /* LVFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LVFooter.xib; sourceTree = "<group>"; };
 		E7FE748C1C89BF4900C37BF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA6DB9011A5D7E2DF181C1E5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -312,6 +317,9 @@
 			children = (
 				E774208B1C8E9805007E1F19 /* LVTitleButton.h */,
 				E774208C1C8E9805007E1F19 /* LVTitleButton.m */,
+				E79BE6BC1C8EEABD009B9ABC /* LVFooter.h */,
+				E79BE6BD1C8EEABD009B9ABC /* LVFooter.m */,
+				E79BE6BF1C8EEB03009B9ABC /* LVFooter.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -664,6 +672,7 @@
 			files = (
 				E77420EC1C8E9805007E1F19 /* LVtest1ViewController.xib in Resources */,
 				E7FE748D1C89BF4900C37BF2 /* Assets.xcassets in Resources */,
+				E79BE6C01C8EEB03009B9ABC /* LVFooter.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +748,7 @@
 				E77420F51C8E9A75007E1F19 /* LVUser.m in Sources */,
 				E77420DE1C8E9805007E1F19 /* LVNewFeatureController.m in Sources */,
 				E77420D21C8E9805007E1F19 /* LVDiscoverViewController.m in Sources */,
+				E79BE6BE1C8EEABD009B9ABC /* LVFooter.m in Sources */,
 				E77420EB1C8E9805007E1F19 /* LVtest1ViewController.m in Sources */,
 				E77420DB1C8E9805007E1F19 /* LVTabBar.m in Sources */,
 				E77420DD1C8E9805007E1F19 /* LVMessageViewController.m in Sources */,

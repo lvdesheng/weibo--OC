@@ -16,6 +16,8 @@
 #import "LVStatus.h"
 #import "LVUser.h"
 #import <MJExtension.h>
+#import "LVFooter.h"
+
 
 
 @interface LVHomeViewController ()<LVDropdownMenuDelegate>
@@ -46,15 +48,29 @@
     [self setupUserInfo];
     
     
-    //集成刷新控件
-    [self setupRefresh];
+    //集成下拉刷新控件
+    [self setupDownRefresh];
+    
+    //集成上拉加载控件
+    [self setupUpRefresh];
     
 }
 
 /**
- *  集成刷新控件
+ *  集成上拉加载控件
  */
-- (void)setupRefresh
+- (void)setupUpRefresh
+{
+    LVFooter *footer = [LVFooter footer];
+    
+    footer.hidden = YES;
+    self.tableView.tableFooterView = footer;
+}
+
+/**
+ *  集成下拉刷新控件
+ */
+- (void)setupDownRefresh
 {
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
@@ -71,6 +87,7 @@
     LVAcount *account = [LVAccountTool account];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"access_token"] = account.access_token;
+    parameters[@"count"] = @15;
     
     // 取出最前面的微博（最新的微博，ID最大的微博）
     LVStatus *firstStatus = [self.statuses firstObject];
@@ -133,7 +150,7 @@
     label.y = 64 - label.height;
     // 将label添加到导航控制器的view中，并且是盖在导航栏下边
     [self.navigationController.view insertSubview:label belowSubview:self.navigationController.navigationBar];
-    
+    ;
     //4.动画
     // 先利用1s的时间，让label往下移动一段距离
     NSTimeInterval Duration = 0.5;
@@ -310,10 +327,29 @@
 
 }
 
-/**
- 1.将字典转为模型
- 2.能够下拉刷新最新的微博数据
- 3.能够上拉加载更多的微博数据
- */
+#pragma mark - tableView代理方法
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat offSetY = scrollView.contentOffset.y;
+    // 如果tableView还没有数据，就直接返回
+    if (self.statuses.count == 0) return;
+    
+    // 当最后一个cell完全显示在眼前时，contentOffset的y值
+    CGFloat judgeOffsetY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height - self.tableView.tableFooterView.height;
+    if (offSetY >= judgeOffsetY){
+        //显示footer
+        self.tableView.tableFooterView.hidden = NO;
+        
+        //加载更多数据
+        LVLog(@"加载更多数据");
+    }
+   
+    
+}
+
+
+
+
+
 
 @end

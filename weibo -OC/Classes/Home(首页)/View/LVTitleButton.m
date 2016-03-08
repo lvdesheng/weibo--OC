@@ -22,8 +22,6 @@
         
         [self setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
         
-        
-         
     }
     return self;
 }
