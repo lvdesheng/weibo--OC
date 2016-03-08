@@ -94,8 +94,8 @@
 		E7FA43051C859A2C00E6558A /* LVDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDiscoverViewController.m; sourceTree = "<group>"; };
 		E7FA430A1C859A2C00E6558A /* LVHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVHomeViewController.h; sourceTree = "<group>"; };
 		E7FA430B1C859A2C00E6558A /* LVHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVHomeViewController.m; sourceTree = "<group>"; };
-		E7FA430F1C859A2C00E6558A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Main/AppDelegate.h; sourceTree = "<group>"; };
-		E7FA43101C859A2C00E6558A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../Main/AppDelegate.m; sourceTree = "<group>"; };
+		E7FA430F1C859A2C00E6558A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/Main/AppDelegate.h; sourceTree = "<group>"; };
+		E7FA43101C859A2C00E6558A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/Main/AppDelegate.m; sourceTree = "<group>"; };
 		E7FA43121C859A2C00E6558A /* LVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVTabBarController.h; sourceTree = "<group>"; };
 		E7FA43131C859A2C00E6558A /* LVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVTabBarController.m; sourceTree = "<group>"; };
 		E7FA43141C859A2C00E6558A /* LVVNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVVNavgationController.h; sourceTree = "<group>"; };
@@ -231,6 +231,8 @@
 		E76371FE1C8546970005C143 /* weibo -OC */ = {
 			isa = PBXGroup;
 			children = (
+				E7FA430F1C859A2C00E6558A /* AppDelegate.h */,
+				E7FA43101C859A2C00E6558A /* AppDelegate.m */,
 				E7FA43011C859A2C00E6558A /* Classes */,
 				E76372101C8546970005C143 /* Info.plist */,
 				E7FE748C1C89BF4900C37BF2 /* Assets.xcassets */,
@@ -469,8 +471,6 @@
 			isa = PBXGroup;
 			children = (
 				E7FA43271C859A2C00E6558A /* Categoty */,
-				E7FA430F1C859A2C00E6558A /* AppDelegate.h */,
-				E7FA43101C859A2C00E6558A /* AppDelegate.m */,
 				E7FA43261C859A2C00E6558A /* BSBDJ.pch */,
 				E7FA43341C859A2C00E6558A /* main.m */,
 			);

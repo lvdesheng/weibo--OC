@@ -12,11 +12,13 @@
 #import "AFNetworking.h"
 #import "LVAccountTool.h"
 #import "LVTitleButton.h"
+#import <UIImageView+WebCache.h>
 
 
 @interface LVHomeViewController ()<LVDropdownMenuDelegate>
 
-
+/**微博数组（里面放的都是微博字典，一个字典对象就代表一条微博）*/
+@property (nonatomic, strong) NSArray *statuses;
 
 @end
 
@@ -31,6 +33,33 @@
     //获取用户信息
     [self setupUserInfo];
     
+    //加载最新微博数据
+    [self loadNewStatus];
+    
+}
+
+#pragma mark - 网络请求
+- (void)loadNewStatus
+{
+    //请求管理者
+    AFHTTPSessionManager *mgr =  [AFHTTPSessionManager manager];
+    //网络参数
+    LVAcount *account = [LVAccountTool account];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"access_token"] = account.access_token;
+    //发送请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //获取微博字典数组
+        self.statuses = responseObject[@"statuses"];
+        
+        //刷新表格
+        [self.tableView reloadData];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        LVLog(@"请求微博数据失败 - %@",error);
+    }];
+
 }
 
 
@@ -153,7 +182,47 @@
     LVTitleButton *titleButton = (LVTitleButton *)self.navigationItem.titleView;
     titleButton.selected = YES;
 
+}
+
+#pragma mark - tableView data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return  self.statuses.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+        static NSString *ID = @"statuses";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+        }
+        
+    //取出对应行的的微博字典
+    NSDictionary *status = self.statuses[indexPath.row];
+    
+    //取出这条微博的作者
+    NSDictionary *user = status[@"user"];
+    cell.textLabel.text = user[@"name"];
+    
+    //设置微博文字
+    cell.detailTextLabel.text = status[@"text"];
+    //设置头像
+    
+    NSString *imageUrl = user[@"profile_image_url"];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
+    
+    return cell;
 
 }
+
+/**
+ 1.将字典转为模型
+ 2.能够下拉刷新最新的微博数据
+ 3.能够上拉加载更多的微博数据
+ */
 
 @end
