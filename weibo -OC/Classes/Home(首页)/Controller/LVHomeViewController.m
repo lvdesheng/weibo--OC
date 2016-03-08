@@ -51,13 +51,18 @@
     
 }
 
+/**
+ *  集成刷新控件
+ */
 - (void)setupRefresh
 {
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
 }
-
+/**
+ *  UIRefreshControl进入刷新状态：加载最新的数据
+ */
 - (void)refreshStateChange:(UIRefreshControl *)refreshControl
 {
     //请求管理者
@@ -93,6 +98,9 @@
         //结束刷新
         [refreshControl endRefreshing];
         
+        //显示最新微博数量
+        [self showNewStatusCount:newStauses.count];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         LVLog(@"请求微博数据失败 - %@",error);
         //结束刷新
@@ -102,7 +110,49 @@
 
 }
 
-
+- (void)showNewStatusCount:(NSInteger)conut
+{
+    //1.创建label
+    UILabel *label = [[UILabel alloc]init];
+    label.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_new_status_background"]];
+    label.width = LVScreenW;
+    label.height = 35;
+    //2.其他属性
+    
+    if (conut == 0){
+        label.text = @"没有新的微博";
+    }else{
+        label.text = [NSString stringWithFormat:@"共有%ld条新微薄",conut];
+    }
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:16];
+    
+    
+    //3.添加
+    label.y = 64 - label.height;
+    // 将label添加到导航控制器的view中，并且是盖在导航栏下边
+    [self.navigationController.view insertSubview:label belowSubview:self.navigationController.navigationBar];
+    
+    //4.动画
+    // 先利用1s的时间，让label往下移动一段距离
+    NSTimeInterval Duration = 0.5;
+    [UIView animateWithDuration:Duration animations:^{
+        label.transform = CGAffineTransformMakeTranslation(0, label.height);
+    }completion:^(BOOL finished) {
+        // 延迟1s后，再利用1s的时间，让label往上移动一段距离（回到一开始的状态）
+        
+        NSTimeInterval delay = 0.5;
+        // UIViewAnimationOptionCurveLinear:匀速
+        [UIView animateWithDuration:Duration delay:delay options:UIViewAnimationOptionCurveLinear animations:^{
+            label.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            [label removeFromSuperview];
+        }];
+    }];
+    
+    
+}
 
 #pragma mark - 初始化
 - (void)setupUserInfo
