@@ -11,16 +11,6 @@
 
 @implementation LVStatus
 
-+ (instancetype)initWithDict:(NSDictionary *)dict
-{
-    LVStatus *status = [[LVStatus alloc]init];
-    
-    status.idstr = dict[@"idstr"];
-    status.text = dict[@"text"];
-    status.user = [LVUser initWithDict:dict[@"user"]];
-    
-    return status;
-    
-}
+
 
 @end

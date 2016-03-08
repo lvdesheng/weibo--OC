@@ -15,25 +15,19 @@
 #import <UIImageView+WebCache.h>
 #import "LVStatus.h"
 #import "LVUser.h"
+#import <MJExtension.h>
 
 
 @interface LVHomeViewController ()<LVDropdownMenuDelegate>
 
 /**微博数组（里面放的都是微博字典，一个字典对象就代表一条微博）*/
-@property (nonatomic, strong) NSMutableArray *statuses;
+@property (nonatomic, strong) NSArray *statuses;
 
 @end
 
 @implementation LVHomeViewController
 
-- (NSMutableArray *)statuses
-{
-    if (!_statuses) {
-        _statuses = [[NSMutableArray alloc] init];
-        
-    }
-    return _statuses;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,15 +55,10 @@
     //发送请求
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        //获取微博字典数组
-        NSArray *dictArray = responseObject[@"statuses"];
+   
         // 将 "微博字典"数组 转为 "微博模型"数组
         
-        for (NSDictionary *dict in dictArray) {
-            LVStatus *status = [LVStatus initWithDict:dict];
-            [self.statuses addObject:status];
-        }
-        
+        self.statuses = [LVStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         
         //刷新表格
         [self.tableView reloadData];
@@ -107,7 +96,7 @@
         UIButton *titleButton = (UIButton *)self.navigationItem.titleView;
         //设置名字
 //        NSString *name = responseObject[@"name"];
-        LVUser *user = [LVUser initWithDict:responseObject];
+        LVUser *user = [LVUser mj_objectWithKeyValues:responseObject];
         [titleButton setTitle:user.name forState:UIControlStateNormal];
         //存入沙盒
         account.name = user.name;
@@ -225,8 +214,6 @@
     LVStatus *status = self.statuses[indexPath.row];
     
     //取出这条微博的作者
-//    NSDictionary *user = status[@"user"];
-//    cell.textLabel.text = user[@"name"];
     
     LVUser *user = status.user;
     cell.textLabel.text = user.name;
@@ -234,7 +221,6 @@
     cell.detailTextLabel.text = status.text;
     //设置头像
     
-//    NSString *imageUrl = user[@"profile_image_url"];
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
     
     return cell;

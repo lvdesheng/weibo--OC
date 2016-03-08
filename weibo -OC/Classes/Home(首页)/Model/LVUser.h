@@ -19,6 +19,6 @@
 /**profile_image_url	string	用户头像地址（中图），50×50像素 */
 @property (nonatomic, copy) NSString *profile_image_url;
 
-+ (instancetype)initWithDict:(NSDictionary *)dict;
+
 
 @end

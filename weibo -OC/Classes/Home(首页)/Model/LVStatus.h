@@ -19,6 +19,6 @@
 /**user	object	微博作者的用户信息字段 详细*/
 @property (nonatomic, strong)  LVUser *user;
 
-+ (instancetype)initWithDict:(NSDictionary *)dict;
+
 
 @end
