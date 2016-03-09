@@ -73,13 +73,13 @@
 - (void)setupDownRefresh
 {
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
+    [refreshControl addTarget:self action:@selector(loadNewStatus:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
 }
 /**
  *  UIRefreshControl进入刷新状态：加载最新的数据
  */
-- (void)refreshStateChange:(UIRefreshControl *)refreshControl
+- (void)loadNewStatus:(UIRefreshControl *)refreshControl
 {
     //请求管理者
     AFHTTPSessionManager *mgr =  [AFHTTPSessionManager manager];
@@ -87,7 +87,7 @@
     LVAcount *account = [LVAccountTool account];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"access_token"] = account.access_token;
-    parameters[@"count"] = @15;
+
     
     // 取出最前面的微博（最新的微博，ID最大的微博）
     LVStatus *firstStatus = [self.statuses firstObject];
@@ -127,6 +127,45 @@
 
 }
 
+/**
+ *  上拉加载更多数据
+ */
+- (void)loadMoreStatus
+{
+    //会话管理者
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    
+    //拼接参数
+    LVAcount *account = [LVAccountTool account];
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
+    parameter[@"access_token"] = account.access_token;
+    
+    //发送请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        // 将 "微博字典"数组 转为 "微博模型"数组
+        NSArray *newStauses = [LVStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        
+        // 将更多的微博数据，添加到总数组的最后面
+        [self.statuses addObjectsFromArray:newStauses];
+        
+        //刷新课表
+        [self.tableView reloadData];
+        
+        //结束刷新隐藏footer
+        self.tableView.tableFooterView.hidden = YES;
+    
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        LVLog(@"请求微博数据失败 - %@",error);
+        //结束刷新
+        self.tableView.tableFooterView.hidden = YES;
+    }];
+    
+}
+/**
+ *  显示最新微博数量
+ *
+ *  @param conut 最新微博数量
+ */
 - (void)showNewStatusCount:(NSInteger)conut
 {
     //1.创建label
@@ -332,7 +371,7 @@
 {
     CGFloat offSetY = scrollView.contentOffset.y;
     // 如果tableView还没有数据，就直接返回
-    if (self.statuses.count == 0) return;
+    if (self.statuses.count == 0 || self.tableView.tableFooterView.isHidden == NO) return;
     
     // 当最后一个cell完全显示在眼前时，contentOffset的y值
     CGFloat judgeOffsetY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height - self.tableView.tableFooterView.height;
@@ -341,7 +380,7 @@
         self.tableView.tableFooterView.hidden = NO;
         
         //加载更多数据
-        LVLog(@"加载更多数据");
+        [self loadMoreStatus];
     }
    
     
