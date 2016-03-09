@@ -17,25 +17,30 @@
 #import "LVUser.h"
 #import <MJExtension.h>
 #import "LVFooter.h"
+#import "LVStatusCell.h"
+#import "LVStatusFrame.h"
+
 
 
 
 @interface LVHomeViewController ()<LVDropdownMenuDelegate>
 
-/**微博数组（里面放的都是微博字典，一个字典对象就代表一条微博）*/
-@property (nonatomic, strong) NSMutableArray *statuses;
+/**
+ *  微博数组（里面放的都是LVStatusFrame模型，一个LVStatusFrame对象就代表一条微博）
+ */
+@property (nonatomic, strong) NSMutableArray *statusFrames;
 
 @end
 
 @implementation LVHomeViewController
 
-- (NSMutableArray *)statuses
+- (NSMutableArray *)statusFrames
 {
-    if (!_statuses) {
-        _statuses = [[NSMutableArray alloc] init];
+    if (!_statusFrames) {
+        _statusFrames = [[NSMutableArray alloc] init];
         
     }
-    return _statuses;
+    return _statusFrames;
 }
 
 - (void)viewDidLoad {
@@ -124,6 +129,25 @@
     //马上加载数据
     [self loadNewStatus:refreshControl];
 }
+
+/**
+ *  将LVStatus模型转为LVStatusFrame模型
+ */
+- (NSArray *)statusFramesWithStaus:(NSArray *)statuses
+{
+    NSMutableArray *fames = [NSMutableArray array];
+    
+    for (LVStatus *status in statuses) {
+        LVStatusFrame *f = [[LVStatusFrame alloc]init];
+        f.status = status;
+        [fames addObject:f];
+    }
+    return fames;
+}
+
+
+
+
 /**
  *  UIRefreshControl进入刷新状态：加载最新的数据
  */
@@ -138,10 +162,10 @@
 
     
     // 取出最前面的微博（最新的微博，ID最大的微博）
-    LVStatus *firstStatus = [self.statuses firstObject];
-    if (firstStatus){
+    LVStatusFrame *firstStatusF = [self.statusFrames firstObject];
+    if (firstStatusF){
         //since_id	false	int64	若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
-        parameters[@"since_id"] = firstStatus.idstr;
+        parameters[@"since_id"] = firstStatusF.status.idstr;
     }
     
     //发送请求
@@ -151,11 +175,15 @@
         // 将 "微博字典"数组 转为 "微博模型"数组
         
         NSArray *newStauses = [LVStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+
+        // 将 LVStatus数组 转为 LVStatusFrame数组
+        NSArray *newFrames = [self statusFramesWithStaus:newStauses];
+        
         // 将最新的微博数据，添加到总数组的最前面
         
-        NSRange range = NSMakeRange(0, newStauses.count);
+        NSRange range = NSMakeRange(0, newFrames.count);
         NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
-        [self.statuses insertObjects:newStauses atIndexes:set];
+        [self.statusFrames insertObjects:newFrames atIndexes:set];
         
         //刷新表格
         [self.tableView reloadData];
@@ -189,11 +217,11 @@
     parameter[@"access_token"] = account.access_token;
     
     // 取出最后面的微博（最新的微博，ID最大的微博）
-    LVStatus *lastStatus = [self.statuses lastObject];
-    if (lastStatus){
+    LVStatusFrame *lastStatusF = [self.statusFrames lastObject];
+    if (lastStatusF){
         // 若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
         // id这种数据一般都是比较大的，一般转成整数的话，最好是long long类型
-        long long MaxId = lastStatus.idstr.longLongValue - 1;
+        long long MaxId = lastStatusF.status.idstr.longLongValue - 1;
         parameter[@"max_id"] = @(MaxId);
     }
     
@@ -203,8 +231,11 @@
         // 将 "微博字典"数组 转为 "微博模型"数组
         NSArray *newStauses = [LVStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         
+        // 将 LVStatus数组 转为 LVStatusFrame数组
+        NSArray *newFrames = [self statusFramesWithStaus:newStauses];
+        
         // 将更多的微博数据，添加到总数组的最后面
-        [self.statuses addObjectsFromArray:newStauses];
+        [self.statusFrames addObjectsFromArray:newFrames];
         
         //刷新课表
         [self.tableView reloadData];
@@ -398,31 +429,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return  self.statuses.count;
+    return  self.statusFrames.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-        static NSString *ID = @"statuses";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        
-        if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-        }
-        
-    //取出对应行的的微博字典
-    LVStatus *status = self.statuses[indexPath.row];
+    //获得cell
+    LVStatusCell *cell = [LVStatusCell cellWithTabelView:tableView];
     
-    //取出这条微博的作者
-    
-    LVUser *user = status.user;
-    cell.textLabel.text = user.name;
-    //设置微博文字
-    cell.detailTextLabel.text = status.text;
-    //设置头像
-    
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_big"]];
+    //给cell传递frame数据
+    cell.statusFrame = self.statusFrames[indexPath.row];
     
     return cell;
 
@@ -433,7 +450,7 @@
 {
     CGFloat offSetY = scrollView.contentOffset.y;
     // 如果tableView还没有数据，就直接返回
-    if (self.statuses.count == 0 || self.tableView.tableFooterView.isHidden == NO) return;
+    if (self.statusFrames.count == 0 || self.tableView.tableFooterView.isHidden == NO) return;
     
     // 当最后一个cell完全显示在眼前时，contentOffset的y值
     CGFloat judgeOffsetY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height - self.tableView.tableFooterView.height;
@@ -448,7 +465,11 @@
 }
 
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LVStatusFrame *frame = self.statusFrames[indexPath.row];
+    return frame.cellHeight;
+}
 
 
 

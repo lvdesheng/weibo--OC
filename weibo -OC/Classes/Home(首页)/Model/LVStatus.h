@@ -19,6 +19,10 @@
 /**user	object	微博作者的用户信息字段 详细*/
 @property (nonatomic, strong)  LVUser *user;
 
+/**created_at	string	微博创建时间 */
+@property (nonatomic, copy) NSString *created_at;
 
+/**source	string	微博来源 */
+@property (nonatomic, copy) NSString *source;
 
 @end
