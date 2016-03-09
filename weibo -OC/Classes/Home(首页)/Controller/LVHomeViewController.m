@@ -171,7 +171,7 @@
     //发送请求
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        
+
         // 将 "微博字典"数组 转为 "微博模型"数组
         
         NSArray *newStauses = [LVStatus mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E75CF31D1C904091006B8B23 /* LVPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E75CF31C1C904091006B8B23 /* LVPhoto.m */; };
 		E763721A1C8546970005C143 /* weibo__OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372191C8546970005C143 /* weibo__OCTests.m */; };
 		E76372251C8546970005C143 /* weibo__OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372241C8546970005C143 /* weibo__OCUITests.m */; };
 		E77420D21C8E9805007E1F19 /* LVDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420801C8E9805007E1F19 /* LVDiscoverViewController.m */; };
@@ -66,6 +67,8 @@
 /* Begin PBXFileReference section */
 		3B6F8F4DBD284B6A4F092F52 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9A249DC7C470F9B89E557623 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E75CF31B1C904091006B8B23 /* LVPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVPhoto.h; sourceTree = "<group>"; };
+		E75CF31C1C904091006B8B23 /* LVPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVPhoto.m; sourceTree = "<group>"; };
 		E76371FC1C8546970005C143 /* weibo -OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo -OC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76372101C8546970005C143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E76372151C8546970005C143 /* weibo -OCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weibo -OCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +319,8 @@
 				E77420F41C8E9A75007E1F19 /* LVUser.m */,
 				E79BE6C41C8FF757009B9ABC /* LVStatusFrame.h */,
 				E79BE6C51C8FF757009B9ABC /* LVStatusFrame.m */,
+				E75CF31B1C904091006B8B23 /* LVPhoto.h */,
+				E75CF31C1C904091006B8B23 /* LVPhoto.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -771,6 +776,7 @@
 				E77420E71C8E9805007E1F19 /* UIView+Frame.m in Sources */,
 				E77420E01C8E9805007E1F19 /* LVAcount.m in Sources */,
 				E77420DF1C8E9805007E1F19 /* LVOAuthController.m in Sources */,
+				E75CF31D1C904091006B8B23 /* LVPhoto.m in Sources */,
 				E77420E91C8E9805007E1F19 /* UIWindow+Extension.m in Sources */,
 				E77420E61C8E9805007E1F19 /* UITextField+Placeholder.m in Sources */,
 				E77420EA1C8E9805007E1F19 /* main.m in Sources */,

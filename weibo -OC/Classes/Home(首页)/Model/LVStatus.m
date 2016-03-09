@@ -8,9 +8,14 @@
 
 #import "LVStatus.h"
 #import "LVUser.h"
+#import "MJExtension.h"
+#import "LVPhoto.h"
+
 
 @implementation LVStatus
 
-
-
++ (NSDictionary *)mj_objectClassInArray
+{
+     return  @{@"pic_urls" : [LVPhoto class]};
+}
 @end

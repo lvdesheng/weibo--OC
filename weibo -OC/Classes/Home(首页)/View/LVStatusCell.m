@@ -11,6 +11,7 @@
 #import "LVStatusFrame.h"
 #import "UIImageView+WebCache.h"
 #import "LVUser.h"
+#import "LVPhoto.h"
 
 @interface LVStatusCell ()
 /*原创微博*/
@@ -133,8 +134,16 @@
         self.vipView.hidden = YES;
     }
     /**配图*/
-    self.photoView.frame = statusFrame.photoViewF;
-    self.photoView.backgroundColor = [UIColor redColor];
+
+    if (status.pic_urls.count){
+        self.photoView.frame = statusFrame.photoViewF;
+        LVPhoto *photo = [status.pic_urls firstObject];
+        [self.photoView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+        self.photoView.hidden = NO;
+    }else{
+        self.photoView.hidden = YES;
+    }
+    
     
     /**昵称*/
     self.nameLabel.frame = statusFrame.nameLabelF;

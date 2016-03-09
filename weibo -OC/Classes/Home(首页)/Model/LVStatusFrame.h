@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 // 昵称字体
-#define LVStatusCellNameFont [UIFont systemFontOfSize:15]
+#define LVStatusCellNameFont [UIFont systemFontOfSize:17]
 // 时间字体
 #define LVStatusCellTimeFont [UIFont systemFontOfSize:12]
 // 来源字体
 #define LVStatusCellSourceFont LVStatusCellTimeFont
 // 正文字体
-#define LVStatusCellContentFont [UIFont systemFontOfSize:14]
+#define LVStatusCellContentFont [UIFont systemFontOfSize:16]
 
 
 @class LVStatus;
