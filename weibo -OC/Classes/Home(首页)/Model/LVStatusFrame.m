@@ -91,18 +91,52 @@
     }else{
         originalH = CGRectGetMaxY(self.contentLabelF) + LVStatusCellBorderW;
     }
-        
-    
-    
+  
     /** 原创微博整体 */
     CGFloat originalX = 0;
     CGFloat originalY = 0;
     CGFloat originalW = cellW;
-
     self.originalViewF = CGRectMake(originalX, originalY, originalW, originalH);
     
     
-    self.cellHeight = CGRectGetMaxY(self.originalViewF);
+    /*被转发微博 */
+    if (status.retweeted_status){
+        LVStatus *retweeted_status = status.retweeted_status;
+        LVUser *retweeted_status_user = retweeted_status.user;
+        /** 被转发微博正文*/
+        CGFloat retweetContentX = LVStatusCellBorderW;
+        CGFloat retweetContentY = LVStatusCellBorderW;
+        NSString *retweetContent = [NSString stringWithFormat:@"@%@ : %@",retweeted_status_user.name,retweeted_status.text];
+        CGSize retweetContentSize = [self sizeWithText:retweetContent font:LVStatusCellRetweetContentFont maxW:maxW];
+        self.retweetContentLabelF =(CGRect) {{retweetContentX,retweetContentY} ,retweetContentSize};
+        
+        
+        /**被转发微博配图 */
+        CGFloat retweetViewH = 0;
+        if (retweeted_status.pic_urls.count){//转发微博有配图
+            CGFloat retweetPhotoWH = 100;
+            CGFloat retweetPhotoX = retweetContentX;
+            CGFloat retweetPhotoy = CGRectGetMaxY(self.retweetContentLabelF) + LVStatusCellBorderW;
+            self.retweetPhotoViewF = CGRectMake(retweetPhotoX, retweetPhotoy, retweetPhotoWH, retweetPhotoWH);
+            
+            retweetViewH = CGRectGetMaxY(self.retweetPhotoViewF) +LVStatusCellBorderW;
+        }else{//无配图
+            retweetViewH = CGRectGetMaxY(self.retweetContentLabelF) +LVStatusCellBorderW;
+        }
+    
+        /**被转发微博整体 */
+        CGFloat retweetViewX = 0;
+        CGFloat retweetViewY = CGRectGetMaxY(self.originalViewF);
+        CGFloat retweetViewW = cellW;
+        self.retweetViewF = CGRectMake(retweetViewX, retweetViewY, retweetViewW, retweetViewH);
+
+        self.cellHeight = CGRectGetMaxY(self.retweetViewF);
+        
+    }else{
+    
+        self.cellHeight = CGRectGetMaxY(self.originalViewF);
+    }
+    
     
 }
 

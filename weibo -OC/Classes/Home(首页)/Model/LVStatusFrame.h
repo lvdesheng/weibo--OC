@@ -17,6 +17,9 @@
 // 正文字体
 #define LVStatusCellContentFont [UIFont systemFontOfSize:16]
 
+// 被转发微博的正文字体
+#define LVStatusCellRetweetContentFont [UIFont systemFontOfSize:15]
+
 
 @class LVStatus;
 
@@ -44,5 +47,15 @@
 
 /**cell的高度*/
 @property (nonatomic, assign)  CGFloat cellHeight;
+
+/**转发微博整体*/
+@property (nonatomic, assign) CGRect retweetViewF;
+
+/**转发微博正文 + 昵称*/
+@property (nonatomic, assign) CGRect retweetContentLabelF;
+
+/**转发配图*/
+@property (nonatomic, assign) CGRect retweetPhotoViewF;
+
 
 @end
