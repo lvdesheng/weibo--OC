@@ -31,7 +31,7 @@
     [self addChildController:homeVC title:@"首页" image:@"tabbar_home" selImage:@"tabbar_home_selected"];
     //消息
     LVMessageViewController *MessageVC = [[LVMessageViewController alloc]init];
-    [self addChildController:MessageVC title:@"消息" image:@"tabbar_message_center" selImage:@"tabbar_message_center"];
+    [self addChildController:MessageVC title:@"消息" image:@"tabbar_message_center" selImage:@"tabbar_message_center_selected"];
     //发现
     LVDiscoverViewController *discoverVC = [[LVDiscoverViewController alloc]init];
     [self addChildController:discoverVC title:@"发现" image:@"tabbar_discover" selImage:@"tabbar_discover_selected"];
