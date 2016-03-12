@@ -12,6 +12,8 @@
 #import "UIImageView+WebCache.h"
 #import "LVUser.h"
 #import "LVPhoto.h"
+#import "LVStatusToolBar.h"
+
 
 @interface LVStatusCell ()
 /*原创微博*/
@@ -44,6 +46,9 @@
 /**转发微博图片*/
 @property (nonatomic, weak)  UIImageView *retweetPhotoView;
 
+/** 工具条*/
+@property (nonatomic, strong) LVStatusToolBar *toolBar;
+
 @end
 
 @implementation LVStatusCell
@@ -71,11 +76,17 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self){
         
+        self.backgroundColor  = [UIColor clearColor];
+        //点击时不变色
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         //初始化原创微博
         [self setupOriginal];
         
         //初始化转发微博
         [self setupRetweet];
+        //初始化工具条
+        [self setupToolBar];
  
     }
     
@@ -83,11 +94,21 @@
 }
 
 
+- (void)setupToolBar
+{
+    LVStatusToolBar *ToolBar = [[LVStatusToolBar alloc]init];
+    [self.contentView addSubview:ToolBar];
+    self.toolBar = ToolBar;
+}
+
+/**
+ *  转发微博
+ */
 - (void)setupRetweet
 {
     /** 转发微博整体*/
     UIView *retweetView = [[UIView alloc]init];
-    retweetView.backgroundColor = LVColor(240, 240, 240);
+    retweetView.backgroundColor = LVColor(247, 247, 247);
     [self.contentView addSubview:retweetView];
     self.retweetView = retweetView;
     
@@ -113,6 +134,7 @@
 
     /**原创微博整体*/
     UIView *originalView = [[UIView alloc]init];
+    originalView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:originalView];
     self.originalView = originalView;
     /**头像*/
@@ -235,10 +257,12 @@
     }else{
         self.retweetView.hidden = YES;
     }
+ 
     
+    /** 工具条*/
+    self.toolBar.frame = statusFrame.toolBarF;
+    self.toolBar.status = status;
     
-    
-
 }
 
 

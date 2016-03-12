@@ -20,6 +20,8 @@
 // 被转发微博的正文字体
 #define LVStatusCellRetweetContentFont [UIFont systemFontOfSize:15]
 
+// cell之间的间距
+#define LVStatusCellMargin 15
 
 @class LVStatus;
 
@@ -56,6 +58,9 @@
 
 /**转发配图*/
 @property (nonatomic, assign) CGRect retweetPhotoViewF;
+
+/**底部工具条*/
+@property (nonatomic, assign)CGRect toolBarF;
 
 
 @end

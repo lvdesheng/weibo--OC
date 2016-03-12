@@ -31,4 +31,12 @@
 /**被转发的原微博信息字段，当该微博为转发微博时返回 */
 @property (nonatomic, strong) LVStatus *retweeted_status;
 
+/** reposts_count	int	转发数*/
+@property (nonatomic, assign)NSInteger reposts_count;
+
+/** comments_count	int	评论数*/
+@property (nonatomic, assign)NSInteger comments_count;
+
+/**attitudes_count*/
+@property (nonatomic, assign)NSInteger attitudes_count;
 @end

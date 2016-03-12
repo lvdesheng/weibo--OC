@@ -94,11 +94,11 @@
   
     /** 原创微博整体 */
     CGFloat originalX = 0;
-    CGFloat originalY = 0;
+    CGFloat originalY = LVStatusCellMargin;
     CGFloat originalW = cellW;
     self.originalViewF = CGRectMake(originalX, originalY, originalW, originalH);
     
-    
+    CGFloat toolbarY = 0;
     /*被转发微博 */
     if (status.retweeted_status){
         LVStatus *retweeted_status = status.retweeted_status;
@@ -130,13 +130,21 @@
         CGFloat retweetViewW = cellW;
         self.retweetViewF = CGRectMake(retweetViewX, retweetViewY, retweetViewW, retweetViewH);
 
-        self.cellHeight = CGRectGetMaxY(self.retweetViewF);
+        toolbarY = CGRectGetMaxY(self.retweetViewF);
         
     }else{
     
-        self.cellHeight = CGRectGetMaxY(self.originalViewF);
+        toolbarY = CGRectGetMaxY(self.originalViewF);
     }
     
+    /**工具条 */
+    CGFloat toolBarX = 0;
+    CGFloat toolBarW = cellW;
+    CGFloat toolBarH = 35;
+    self.toolBarF = CGRectMake(toolBarX, toolbarY, toolBarW, toolBarH);
+    
+    /** cell高度*/
+    self.cellHeight = CGRectGetMaxY(self.toolBarF);
     
 }
 

@@ -43,6 +43,7 @@
 		E79BE6C01C8EEB03009B9ABC /* LVFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79BE6BF1C8EEB03009B9ABC /* LVFooter.xib */; };
 		E79BE6C31C8FEA12009B9ABC /* LVStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E79BE6C21C8FEA12009B9ABC /* LVStatusCell.m */; };
 		E79BE6C61C8FF757009B9ABC /* LVStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E79BE6C51C8FF757009B9ABC /* LVStatusFrame.m */; };
+		E7F0BDE11C93FD6D00AB2C1E /* LVStatusToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F0BDE01C93FD6D00AB2C1E /* LVStatusToolBar.m */; };
 		E7FE748D1C89BF4900C37BF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7FE748C1C89BF4900C37BF2 /* Assets.xcassets */; };
 		EDECFDE0549BDB0626C7A8E4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6DB9011A5D7E2DF181C1E5 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -141,6 +142,8 @@
 		E79BE6C21C8FEA12009B9ABC /* LVStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVStatusCell.m; sourceTree = "<group>"; };
 		E79BE6C41C8FF757009B9ABC /* LVStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVStatusFrame.h; sourceTree = "<group>"; };
 		E79BE6C51C8FF757009B9ABC /* LVStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVStatusFrame.m; sourceTree = "<group>"; };
+		E7F0BDDF1C93FD6D00AB2C1E /* LVStatusToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVStatusToolBar.h; sourceTree = "<group>"; };
+		E7F0BDE01C93FD6D00AB2C1E /* LVStatusToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVStatusToolBar.m; sourceTree = "<group>"; };
 		E7FE748C1C89BF4900C37BF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA6DB9011A5D7E2DF181C1E5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -335,6 +338,8 @@
 				E79BE6BF1C8EEB03009B9ABC /* LVFooter.xib */,
 				E79BE6C11C8FEA12009B9ABC /* LVStatusCell.h */,
 				E79BE6C21C8FEA12009B9ABC /* LVStatusCell.m */,
+				E7F0BDDF1C93FD6D00AB2C1E /* LVStatusToolBar.h */,
+				E7F0BDE01C93FD6D00AB2C1E /* LVStatusToolBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -781,6 +786,7 @@
 				E77420E61C8E9805007E1F19 /* UITextField+Placeholder.m in Sources */,
 				E77420EA1C8E9805007E1F19 /* main.m in Sources */,
 				E79BE6C31C8FEA12009B9ABC /* LVStatusCell.m in Sources */,
+				E7F0BDE11C93FD6D00AB2C1E /* LVStatusToolBar.m in Sources */,
 				E77420E51C8E9805007E1F19 /* UIImage+XMG.m in Sources */,
 				E77420D51C8E9805007E1F19 /* LVTitleButton.m in Sources */,
 				E79BE6C61C8FF757009B9ABC /* LVStatusFrame.m in Sources */,

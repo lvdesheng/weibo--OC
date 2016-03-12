@@ -46,6 +46,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.backgroundColor = LVColor(211, 211, 211);
+    
     //设置导航栏内容
     [self setupNavigationBar];
     
@@ -373,6 +375,7 @@
 - (void)friendAdd
 {
     LVFunc
+
 }
 
 - (void)pop
