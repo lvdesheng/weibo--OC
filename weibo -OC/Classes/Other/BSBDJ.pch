@@ -30,7 +30,7 @@
 #import "UIButton+ImageTitleSpacing.h"
 #import "UIWindow+Extension.h"
 #import "NSDate+Extension.h"
-
+#import "NSString+Extension.h"
 
 
 #define LVFunc LVLog(@"%s",__func__);

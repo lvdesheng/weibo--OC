@@ -158,6 +158,7 @@
     /**时间*/
     UILabel *timeLabel = [[UILabel alloc]init];
     timeLabel.font = LVStatusCellTimeFont;
+    timeLabel.textColor = [UIColor orangeColor];
     [originalView addSubview:timeLabel];
     self.timeLabel = timeLabel;
     /**来源*/
@@ -216,12 +217,20 @@
     self.nameLabel.frame = statusFrame.nameLabelF;
     self.nameLabel.text = user.name;
     /**时间*/
-    self.timeLabel.text = status.created_at;
-    self.timeLabel.frame  = statusFrame.timeLabelF;
-    
+    NSString *time = status.created_at;
+    CGFloat timeX = statusFrame.nameLabelF.origin.x;
+    CGFloat timeY = CGRectGetMaxY(statusFrame.nameLabelF) + LVStatusCellBorderW;
+    CGSize timeSize = [time sizeWithFont:LVStatusCellTimeFont];
+    self.timeLabel.frame = (CGRect){{timeX,timeY}, timeSize};
+    self.timeLabel.text = time;
     /**来源*/
+    
+    CGFloat sourceX = CGRectGetMaxX(self.timeLabel.frame) + LVStatusCellBorderW;
+    CGFloat sourceY = timeY;
+    CGSize sourceSize = [status.source sizeWithFont:LVStatusCellSourceFont];
+    self.sourceLabel.frame =(CGRect) {{sourceX,sourceY},sourceSize} ;
     self.sourceLabel.text = status.source;
-    self.sourceLabel.frame = statusFrame.sourceLabelF;
+
     /**正文*/
     self.contentLabel.frame = statusFrame.contentLabelF;
     self.contentLabel.text = status.text;

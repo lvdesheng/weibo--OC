@@ -11,6 +11,7 @@
 		E763721A1C8546970005C143 /* weibo__OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372191C8546970005C143 /* weibo__OCTests.m */; };
 		E76372251C8546970005C143 /* weibo__OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372241C8546970005C143 /* weibo__OCUITests.m */; };
 		E77315111C943A690048D762 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E77315101C943A690048D762 /* NSDate+Extension.m */; };
+		E77315141C945E1A0048D762 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E77315131C945E1A0048D762 /* NSString+Extension.m */; };
 		E77420D21C8E9805007E1F19 /* LVDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420801C8E9805007E1F19 /* LVDiscoverViewController.m */; };
 		E77420D31C8E9805007E1F19 /* LVHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420861C8E9805007E1F19 /* LVHomeViewController.m */; };
 		E77420D41C8E9805007E1F19 /* LVTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420881C8E9805007E1F19 /* LVTitleMenuViewController.m */; };
@@ -81,6 +82,8 @@
 		E76372261C8546970005C143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E773150F1C943A690048D762 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		E77315101C943A690048D762 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		E77315121C945E1A0048D762 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		E77315131C945E1A0048D762 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		E774207F1C8E9805007E1F19 /* LVDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVDiscoverViewController.h; sourceTree = "<group>"; };
 		E77420801C8E9805007E1F19 /* LVDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDiscoverViewController.m; sourceTree = "<group>"; };
 		E77420851C8E9805007E1F19 /* LVHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVHomeViewController.h; sourceTree = "<group>"; };
@@ -535,9 +538,9 @@
 		E77420BA1C8E9805007E1F19 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				E77420CD1C8E9805007E1F19 /* main.m */,
 				E77420BB1C8E9805007E1F19 /* BSBDJ.pch */,
 				E77420BC1C8E9805007E1F19 /* Categoty */,
-				E77420CD1C8E9805007E1F19 /* main.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -563,6 +566,8 @@
 				E77420CC1C8E9805007E1F19 /* UIWindow+Extension.m */,
 				E773150F1C943A690048D762 /* NSDate+Extension.h */,
 				E77315101C943A690048D762 /* NSDate+Extension.m */,
+				E77315121C945E1A0048D762 /* NSString+Extension.h */,
+				E77315131C945E1A0048D762 /* NSString+Extension.m */,
 			);
 			path = Categoty;
 			sourceTree = "<group>";
@@ -790,6 +795,7 @@
 				E75CF31D1C904091006B8B23 /* LVPhoto.m in Sources */,
 				E77420E91C8E9805007E1F19 /* UIWindow+Extension.m in Sources */,
 				E77420E61C8E9805007E1F19 /* UITextField+Placeholder.m in Sources */,
+				E77315141C945E1A0048D762 /* NSString+Extension.m in Sources */,
 				E77420EA1C8E9805007E1F19 /* main.m in Sources */,
 				E79BE6C31C8FEA12009B9ABC /* LVStatusCell.m in Sources */,
 				E7F0BDE11C93FD6D00AB2C1E /* LVStatusToolBar.m in Sources */,

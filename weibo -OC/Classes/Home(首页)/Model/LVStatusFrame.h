@@ -23,6 +23,9 @@
 // cell之间的间距
 #define LVStatusCellMargin 15
 
+// cell的边框宽度
+#define LVStatusCellBorderW 5
+
 @class LVStatus;
 
 @interface LVStatusFrame : NSObject
