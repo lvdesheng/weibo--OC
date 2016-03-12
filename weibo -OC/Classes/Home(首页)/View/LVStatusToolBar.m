@@ -32,7 +32,7 @@
 - (NSMutableArray *)btns
 {
     if (!_btns) {
-        _btns = [[NSMutableArray alloc] init];
+       self.btns = [NSMutableArray array];
         
     }
     return _btns;
@@ -42,7 +42,7 @@
 - (NSMutableArray *)drivers
 {
     if (!_drivers) {
-        _drivers = [[NSMutableArray alloc] init];
+        self.drivers = [NSMutableArray array];
         
     }
     return _drivers;
@@ -56,25 +56,77 @@
         
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_card_bottom_background"]];
         
-        //添加按钮
-        UIButton *btn = [[UIButton alloc]init];
-        [btn setTitle:@"转发" forState:UIControlStateNormal];
-        [btn setImage:[UIImage imageNamed:@"timeline_icon_retweet"] forState:UIControlStateNormal];
-        
-        self.repostsBtn = btn;
-        [self addSubview:btn];
-        [self.btns addObject:btn];
+        //添加
+        self.repostsBtn = [self setupBtn:@"转发" imageName:@"timeline_icon_retweet"];
+        self.commentsBtn = [self setupBtn:@"评论" imageName:@"timeline_icon_comment"];
+        self.attitudesBtn = [self setupBtn:@"赞" imageName:@"timeline_icon_unlike"];
 
-        
+        //添加分割线 两次
+        [self setupDriver];
+        [self setupDriver];
     }
     return self;
+}
+
+/**
+ *  添加分割线
+ */
+- (void)setupDriver
+{
+    UIImageView *driver = [[UIImageView alloc]init];
+    driver.image = [UIImage imageNamed:@"timeline_card_bottom_line"];
+    [self.drivers addObject:driver];
+    [self addSubview:driver];
+}
+
+
+/**
+ *  初始化一个按钮
+ *
+ */
+- (UIButton *)setupBtn:(NSString *)title imageName:(NSString *)imageName
+{
+    UIButton *btn = [[UIButton alloc]init];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
+    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"timeline_card_bottom_background_highlighted"] forState:UIControlStateHighlighted];
+    btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    
+    [self addSubview:btn];
+    [self.btns addObject:btn];
+    
+    return btn;
 }
 
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.repostsBtn.frame = CGRectMake(0, 0, 35, self.height);
+
+    //设置按钮frame
+    NSUInteger count = self.btns.count;
+    CGFloat btnW = self.width / count;
+    CGFloat btnH = self.height;
+    for (int i = 0; i < count; i++) {
+        UIButton *btn = self.btns[i];
+        btn.y = 0;
+        btn.width = btnW;
+        btn.height = btnH;
+        btn.x = btnW * i;
+    }
+    
+    // 设置分割线的frame
+    NSUInteger drivercount = self.drivers.count;
+    for (NSUInteger i = 0; i < drivercount; i++) {
+        UIImageView *driver =  self.drivers[i];
+        driver.width  = 1;
+        driver.height = btnH;
+        driver.x = (i + 1) * btnW;
+        driver.y = 0;
+    }
+    
     
     
 }
