@@ -7,6 +7,7 @@
 //
 
 #import "LVStatusToolBar.h"
+#import "LVStatus.h"
 
 @interface LVStatusToolBar ()
 
@@ -135,8 +136,30 @@
 {
     _status = status;
     
-
+//    [self.repostsBtn setTitle:@"转发" forState:UIControlStateNormal];
+    // 转发
+    [self setupBtnCount:status.reposts_count btn:self.repostsBtn title:@"转发"];
+    // 评论
+    [self setupBtnCount:status.comments_count btn:self.commentsBtn title:@"评论"];
+    // 赞
+    [self setupBtnCount:status.attitudes_count btn:self.attitudesBtn title:@"赞"];
     
+}
+
+
+- (void)setupBtnCount:(int)count btn:(UIButton *)btn title:(NSString *)title
+{
+    if (count) { // 数字不为0
+        if (count < 10000) { // 不足10000：直接显示数字，比如786、7986
+            title = [NSString stringWithFormat:@"%d", count];
+        } else { // 达到10000：显示xx.x万，不要有.0的情况
+            double wan = count / 10000.0;
+            title = [NSString stringWithFormat:@"%.1f万", wan];
+            // 将字符串里面的.0去掉
+            title = [title stringByReplacingOccurrencesOfString:@".0" withString:@""];
+        }
+    }
+    [btn setTitle:title forState:UIControlStateNormal];
 }
 
 @end
