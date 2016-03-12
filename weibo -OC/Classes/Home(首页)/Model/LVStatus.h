@@ -32,11 +32,11 @@
 @property (nonatomic, strong) LVStatus *retweeted_status;
 
 /** reposts_count	int	转发数*/
-@property (nonatomic, assign)NSInteger reposts_count;
+@property (nonatomic, assign)int reposts_count;
 
 /** comments_count	int	评论数*/
-@property (nonatomic, assign)NSInteger comments_count;
+@property (nonatomic, assign)int comments_count;
 
 /**attitudes_count*/
-@property (nonatomic, assign)NSInteger attitudes_count;
+@property (nonatomic, assign)int attitudes_count;
 @end

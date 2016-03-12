@@ -10,6 +10,7 @@
 		E75CF31D1C904091006B8B23 /* LVPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E75CF31C1C904091006B8B23 /* LVPhoto.m */; };
 		E763721A1C8546970005C143 /* weibo__OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372191C8546970005C143 /* weibo__OCTests.m */; };
 		E76372251C8546970005C143 /* weibo__OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372241C8546970005C143 /* weibo__OCUITests.m */; };
+		E77315111C943A690048D762 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E77315101C943A690048D762 /* NSDate+Extension.m */; };
 		E77420D21C8E9805007E1F19 /* LVDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420801C8E9805007E1F19 /* LVDiscoverViewController.m */; };
 		E77420D31C8E9805007E1F19 /* LVHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420861C8E9805007E1F19 /* LVHomeViewController.m */; };
 		E77420D41C8E9805007E1F19 /* LVTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77420881C8E9805007E1F19 /* LVTitleMenuViewController.m */; };
@@ -78,6 +79,8 @@
 		E76372201C8546970005C143 /* weibo -OCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weibo -OCUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76372241C8546970005C143 /* weibo__OCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weibo__OCUITests.m; sourceTree = "<group>"; };
 		E76372261C8546970005C143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E773150F1C943A690048D762 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		E77315101C943A690048D762 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		E774207F1C8E9805007E1F19 /* LVDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVDiscoverViewController.h; sourceTree = "<group>"; };
 		E77420801C8E9805007E1F19 /* LVDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDiscoverViewController.m; sourceTree = "<group>"; };
 		E77420851C8E9805007E1F19 /* LVHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVHomeViewController.h; sourceTree = "<group>"; };
@@ -558,6 +561,8 @@
 				E77420CA1C8E9805007E1F19 /* UIView+xib.m */,
 				E77420CB1C8E9805007E1F19 /* UIWindow+Extension.h */,
 				E77420CC1C8E9805007E1F19 /* UIWindow+Extension.m */,
+				E773150F1C943A690048D762 /* NSDate+Extension.h */,
+				E77315101C943A690048D762 /* NSDate+Extension.m */,
 			);
 			path = Categoty;
 			sourceTree = "<group>";
@@ -775,6 +780,7 @@
 				E77420D81C8E9805007E1F19 /* LVVNavgationController.m in Sources */,
 				E77420D31C8E9805007E1F19 /* LVHomeViewController.m in Sources */,
 				E77420E21C8E9805007E1F19 /* UIBarButtonItem+item.m in Sources */,
+				E77315111C943A690048D762 /* NSDate+Extension.m in Sources */,
 				E77420DA1C8E9805007E1F19 /* LVSearchBar.m in Sources */,
 				E77420E31C8E9805007E1F19 /* UIButton+ImageTitleSpacing.m in Sources */,
 				E77420E11C8E9805007E1F19 /* LVAccountTool.m in Sources */,
