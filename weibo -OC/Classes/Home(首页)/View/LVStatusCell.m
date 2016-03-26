@@ -13,6 +13,8 @@
 #import "LVUser.h"
 #import "LVPhoto.h"
 #import "LVStatusToolBar.h"
+#import "LVStatusPhotosView.h"
+
 
 
 @interface LVStatusCell ()
@@ -25,7 +27,7 @@
 /**会员图标*/
 @property (nonatomic, weak)  UIImageView *vipView;
 /**配图*/
-@property (nonatomic, weak)  UIImageView *photoView;
+@property (nonatomic, weak)  LVStatusPhotosView *photosView;
 /**昵称*/
 @property (nonatomic, weak)  UILabel  *nameLabel;
 /**时间*/
@@ -44,7 +46,7 @@
 @property (nonatomic, weak)  UILabel *retweetContentLabel;
 
 /**转发微博图片*/
-@property (nonatomic, weak)  UIImageView *retweetPhotoView;
+@property (nonatomic, weak)  LVStatusPhotosView *retweetPhotosView;
 
 /** 工具条*/
 @property (nonatomic, strong) LVStatusToolBar *toolBar;
@@ -120,9 +122,9 @@
     self.retweetContentLabel = retweetContentLabel;
     
     /** 转发微博配图*/
-    UIImageView *retweetPhotoView = [[UIImageView alloc]init];
-    [self.retweetView addSubview:retweetPhotoView];
-    self.retweetPhotoView =retweetPhotoView;
+    LVStatusPhotosView *retweetsPhotoView = [[LVStatusPhotosView alloc]init];
+    [self.retweetView addSubview:retweetsPhotoView];
+    self.retweetPhotosView =retweetsPhotoView;
 }
 
 
@@ -147,9 +149,9 @@
     [originalView addSubview:vipView];
     self.vipView = vipView;
     /**配图*/
-    UIImageView *photoView = [[UIImageView alloc]init];
-    [originalView addSubview:photoView];
-    self.photoView = photoView;
+    LVStatusPhotosView *photosView = [[LVStatusPhotosView alloc]init];
+    [originalView addSubview:photosView];
+    self.photosView = photosView;
     /**昵称*/
     UILabel *nameLabel = [[UILabel alloc]init];
     nameLabel.font = LVStatusCellNameFont;
@@ -204,12 +206,13 @@
     /**配图*/
 
     if (status.pic_urls.count){
-        self.photoView.frame = statusFrame.photoViewF;
-        LVPhoto *photo = [status.pic_urls firstObject];
-        [self.photoView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
-        self.photoView.hidden = NO;
+        self.photosView.frame = statusFrame.photoViewF;
+        
+        self.photosView.photos = status.pic_urls;
+        
+        self.photosView.hidden = NO;
     }else{
-        self.photoView.hidden = YES;
+        self.photosView.hidden = YES;
     }
     
     
@@ -256,12 +259,12 @@
         /**被转发微博有配图 */
         if (retweeted_status.pic_urls.count){
             
-            self.retweetPhotoView.frame = statusFrame.retweetPhotoViewF;
-            LVPhoto *retweetPhoto = [retweeted_status.pic_urls firstObject];
-            [self.retweetPhotoView sd_setImageWithURL:[NSURL URLWithString:retweetPhoto.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
-            self.retweetPhotoView.hidden = NO;
+            self.retweetPhotosView.frame = statusFrame.retweetPhotoViewF;
+            self.retweetPhotosView.photos = retweeted_status.pic_urls;
+            
+            self.retweetPhotosView.hidden = NO;
         }else{
-            self.retweetPhotoView.hidden = YES;
+            self.retweetPhotosView.hidden = YES;
         }
     }else{
         self.retweetView.hidden = YES;

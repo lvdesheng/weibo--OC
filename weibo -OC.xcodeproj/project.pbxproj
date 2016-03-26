@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E75AEBBF1C997B8000E1C2A3 /* LVStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E75AEBBE1C997B8000E1C2A3 /* LVStatusPhotoView.m */; };
+		E75AEBC21C997FD200E1C2A3 /* LVStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = E75AEBC11C997FD200E1C2A3 /* LVStatusPhotosView.m */; };
 		E75CF31D1C904091006B8B23 /* LVPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E75CF31C1C904091006B8B23 /* LVPhoto.m */; };
 		E763721A1C8546970005C143 /* weibo__OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372191C8546970005C143 /* weibo__OCTests.m */; };
 		E76372251C8546970005C143 /* weibo__OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E76372241C8546970005C143 /* weibo__OCUITests.m */; };
@@ -70,6 +72,10 @@
 /* Begin PBXFileReference section */
 		3B6F8F4DBD284B6A4F092F52 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9A249DC7C470F9B89E557623 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E75AEBBD1C997B8000E1C2A3 /* LVStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVStatusPhotoView.h; sourceTree = "<group>"; };
+		E75AEBBE1C997B8000E1C2A3 /* LVStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVStatusPhotoView.m; sourceTree = "<group>"; };
+		E75AEBC01C997FD200E1C2A3 /* LVStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVStatusPhotosView.h; sourceTree = "<group>"; };
+		E75AEBC11C997FD200E1C2A3 /* LVStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVStatusPhotosView.m; sourceTree = "<group>"; };
 		E75CF31B1C904091006B8B23 /* LVPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVPhoto.h; sourceTree = "<group>"; };
 		E75CF31C1C904091006B8B23 /* LVPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVPhoto.m; sourceTree = "<group>"; };
 		E76371FC1C8546970005C143 /* weibo -OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo -OC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -346,6 +352,10 @@
 				E79BE6C21C8FEA12009B9ABC /* LVStatusCell.m */,
 				E7F0BDDF1C93FD6D00AB2C1E /* LVStatusToolBar.h */,
 				E7F0BDE01C93FD6D00AB2C1E /* LVStatusToolBar.m */,
+				E75AEBC01C997FD200E1C2A3 /* LVStatusPhotosView.h */,
+				E75AEBC11C997FD200E1C2A3 /* LVStatusPhotosView.m */,
+				E75AEBBD1C997B8000E1C2A3 /* LVStatusPhotoView.h */,
+				E75AEBBE1C997B8000E1C2A3 /* LVStatusPhotoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -777,6 +787,7 @@
 			files = (
 				E77420F51C8E9A75007E1F19 /* LVUser.m in Sources */,
 				E77420DE1C8E9805007E1F19 /* LVNewFeatureController.m in Sources */,
+				E75AEBC21C997FD200E1C2A3 /* LVStatusPhotosView.m in Sources */,
 				E77420D21C8E9805007E1F19 /* LVDiscoverViewController.m in Sources */,
 				E79BE6BE1C8EEABD009B9ABC /* LVFooter.m in Sources */,
 				E77420EB1C8E9805007E1F19 /* LVtest1ViewController.m in Sources */,
@@ -804,6 +815,7 @@
 				E79BE6C61C8FF757009B9ABC /* LVStatusFrame.m in Sources */,
 				E77420DC1C8E9805007E1F19 /* LVMeViewController.m in Sources */,
 				E77420EF1C8E984C007E1F19 /* AppDelegate.m in Sources */,
+				E75AEBBF1C997B8000E1C2A3 /* LVStatusPhotoView.m in Sources */,
 				E77420E41C8E9805007E1F19 /* UIImage+Antialias.m in Sources */,
 				E77420F21C8E989D007E1F19 /* LVStatus.m in Sources */,
 				E77420D71C8E9805007E1F19 /* LVTabBarController.m in Sources */,

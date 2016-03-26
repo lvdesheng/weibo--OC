@@ -65,7 +65,7 @@
     // 计算两个日期之间的差值
     NSDateComponents *cmps = [Calendar components:unit fromDate:creatDate toDate:now options:0];
     
-    if ([creatDate isYesterday]){//今年
+    if ([creatDate isThisYear]){//今年
         
         if ([creatDate isYesterday]){//昨天
             fmt.dateFormat = @"昨天 HH:mm";
@@ -87,7 +87,7 @@
         return [fmt stringFromDate:creatDate];
     }
    
-    return _created_at;
+//    return _created_at;
 }
 
 

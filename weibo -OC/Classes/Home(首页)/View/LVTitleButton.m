@@ -44,7 +44,7 @@
     
     CGFloat space = 4;
     
-    [self layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleLeft imageTitleSpace:space];
+    [self layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleRight imageTitleSpace:space];
 }
 
 - (void)setTitle:(NSString *)title forState:(UIControlState)state

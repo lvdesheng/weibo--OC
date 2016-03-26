@@ -9,6 +9,8 @@
 #import "LVStatusFrame.h"
 #import "LVUser.h"
 #import "LVStatus.h"
+#import "LVStatusPhotosView.h"
+
 
 // cell的边框宽度
 #define LVStatusCellBorderW 10
@@ -63,7 +65,7 @@
     /**时间 */
     CGFloat timeX = nameX;
     CGFloat timeY = CGRectGetMaxY(self.nameLabelF) + LVStatusCellBorderW;
-    CGSize  timeSize = [self sizeWithText:status.created_at font:LVStatusCellTimeFont];
+    CGSize  timeSize = [status.created_at sizeWithFont:LVStatusCellTimeFont];
     self.timeLabelF = (CGRect){{timeX,timeY} ,timeSize};
     
     /** 来源 */
@@ -82,10 +84,10 @@
     /** 配图 */
     CGFloat originalH = 0;
     if (status.pic_urls.count){//有配图
-        CGFloat photoWH = 100;
         CGFloat photoX = contentX;
         CGFloat photoY = CGRectGetMaxY(self.contentLabelF) + LVStatusCellBorderW;
-        self.photoViewF = CGRectMake(photoX, photoY, photoWH, photoWH);
+        CGSize photoSize = [LVStatusPhotosView sizeWithCount:status.pic_urls.count];
+        self.photoViewF = (CGRect){{photoX , photoY} ,photoSize};
         
         originalH = CGRectGetMaxY(self.photoViewF) + LVStatusCellBorderW;
     }else{
@@ -114,11 +116,10 @@
         /**被转发微博配图 */
         CGFloat retweetViewH = 0;
         if (retweeted_status.pic_urls.count){//转发微博有配图
-            CGFloat retweetPhotoWH = 100;
-            CGFloat retweetPhotoX = retweetContentX;
-            CGFloat retweetPhotoy = CGRectGetMaxY(self.retweetContentLabelF) + LVStatusCellBorderW;
-            self.retweetPhotoViewF = CGRectMake(retweetPhotoX, retweetPhotoy, retweetPhotoWH, retweetPhotoWH);
-            
+            CGFloat retweetPhotosX = retweetContentX;
+            CGFloat retweetPhotosY = CGRectGetMaxY(self.retweetContentLabelF) + LVStatusCellBorderW;
+            CGSize retweetPhotosSize = [LVStatusPhotosView sizeWithCount:retweeted_status.pic_urls.count];
+            self.retweetPhotoViewF = (CGRect){{retweetPhotosX, retweetPhotosY}, retweetPhotosSize};
             retweetViewH = CGRectGetMaxY(self.retweetPhotoViewF) +LVStatusCellBorderW;
         }else{//无配图
             retweetViewH = CGRectGetMaxY(self.retweetContentLabelF) +LVStatusCellBorderW;
